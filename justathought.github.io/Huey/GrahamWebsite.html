@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" href = "autoTwo.css">
+</head>
+<body>
+    <div id = "header">
+    <div id = "buttons">
+    <button>
+        login
+    </button>
+    <button>
+        sign up
+    </button>
+    </div>
+    <div class="autoComplete_wrapper">
+        <input id="autoComplete" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+    <script>
+        var content;
+        const autoCompleteJS = new autoComplete({
+            selector: "#autoComplete",
+            placeHolder: "Search for Food...",
+            data: {
+                src: [
+                    {"Text":"The Worry Chart", "Tag": "Read"},
+                    {"Text":"Staying on Track audio course", "Tag": "Listen"}, 
+                    {"Text":"10 Tips to Improve Your Sleep",  "Tag": "Read"},
+                    {"Text":"Seeing Things Clearly resource", "Tag" : "Read"},
+                    {"Text":"Problem Solving Guide", "Tag": "Read"}, 
+                    {"Text": "3-Minute Breathing Exercise", "Tag": "Watch"},
+                    {"Text": "10 Way to Support Someone", "Tag": "Read"}, 
+                    {"Text": "What Matters Most", "Tag": "Read"}, 
+                    {"Text": "Positive Hunt Worksheet", "Tag":"Worksheet"},
+                    {"Text": "About Self Esteem", "Tag": "Read"},
+                    {"Text": "Thinking Traps", "Tag":"Read"}, 
+                    {"Text": "100 Things To Do", "Tag": "Read"}],
+                keys:["Text", "Tag"],
+                cache: true,
+                filter: (list) => {
+      // Filter duplicates
+      // incase of multiple data keys usage
+      const filteredResults = Array.from(
+        new Set(list.map((value) => value.match))
+      ).map((food) => {
+        return list.find((value) => value.match === food);
+      });
+      return filteredResults;
+    }
+            },
+            resultsList: {
+                element: (list, data) => {
+                    
+                    for(i = 0; i < data.results.length; i++)
+                    {
+                        document.getElementById("autoComplete_result_"+i).setAttribute("class", document.getElementById("autoComplete_result_"+i).textContent);
+                    }
+                    content=document.querySelectorAll("div.content");
+                    try{
+                    for(i = 0; i < content.length;)
+                    {
+                        console.log(content.length);
+                        console.log(i);
+                        for(j = 0; j< data.results.length; j++)
+                        {
+                            console.log(content[i].getAttribute('value'));
+                            console.log(data.results[j].value);
+                            if((content[i].getAttribute('value')==document.getElementById("autoComplete_result_"+j).className)||(content[i].id===document.getElementById("autoComplete_result_"+j).className))
+                            {
+                                content[i].style.visibility="visible";
+                                content[i].style.display="block";
+                                j=data.results.length;
+                            }
+
+                            // else if(content[i].id===document.getElementById("autoComplete_result_"+j).className)
+                            // {
+                            //     content[i].style.visibility="visible";
+                            //     j=data.results.length;
+                            // }
+                            else
+                            {
+                                content[i].style.visibility="hidden";
+                                content[i].style.display = "none";
+                            }
+                        }
+                        i++;
+                    }
+                }
+                catch(e)
+                {
+                    console.log(e);
+                }
+                    console.log(list);
+                    if (!data.results.length) {
+                        // Create "No Results" message element
+                        const message = document.createElement("div");
+                        // Add class to the created element
+                        message.setAttribute("class", "no_result");
+                        // Add message text content
+                        message.innerHTML = `<span>Found No Results for "${data.query}"</span>`;
+                        // Append message element to the results list
+                        list.prepend(message);
+                        for(i = 0; i<content.length; i++)
+                        {
+                            content[i].style.visibility = "hidden";
+                        }
+                        
+                    }
+                },
+                noResults: true,
+            },
+            resultItem: {
+                highlight:
+                {
+                    render:true
+                }
+            },
+            events: {
+                input: {
+                    selection: (event) => {
+                        var auto = document.getElementById("autoComplete");
+                        const feedback = event.detail;
+                        //alert(feedback.selection.value[feedback.selection.key]);
+                        autoCompleteJS.input.blur();
+                        // Prepare User's Selected Value
+                        const selection = feedback.selection.value;
+                        // Render selected choice to selection div
+                        auto.innerHTML = selection[feedback.selection.key];
+                        // Replace Input value with the selected value
+                        autoCompleteJS.input.value = selection[feedback.selection.key];
+                        // Console log autoComplete data feedback
+                    }
+                }
+            },
+            searchEngine:"loose",
+            maxResults:5,
+            trigger: (query) => {
+                console.log(query);
+                if(query.length == 0)
+                {
+                    for(i = 0; i < content.length; i++)
+                    {
+                        content[i].style.visibility = "visible";
+                        content[i].style.display = "block";
+                    }
+                }
+                return query.replace(/ /g, "").length; // Returns "Boolean"
+            },
+            
+        });
+    
+    </script>
+    <div id = "contentWrapper">
+        <div class = "content" id = "Read" value="The Worry Chart">
+            <img src = "WorryChart.png"/>
+            <h4>The Worry Chart</h4>
+            <p>This simple "worry chart" can help you learn to let go of negative thoughts and "worries" that may</p>
+        </div>
+        <div class = "content" id = "Listen" value = "Staying on Track audio course">
+            <img src = "StayingOnTrack.png"/>
+            <h4>Staying on Track audio course</h4>
+            <p>Listen to the audio version of our Staying on Track quick course, to help you through times of stress and uncertainty.</p>
+        </div>
+        <div class = "content" id = "Read" value = "10 Tips to Improve Your Sleep">
+            <img src = "ImproveYourSleep.png"/>
+            <h4>10 Tips to Improve Your Sleep</h4>
+            <p>Sleep plays an important role in good health and wellbeing.  Learn some simple habits that really help</p>
+        </div>
+        <div class = "content" id = "Read" value = "Seeing Things Clearly resource">
+            <img src = "SeeingThingsClearly.png"/>
+            <h4>Seeing Things Clearly resource</h4>
+            <p>The resource will teach you how to challenge your thoughts and see things more clearly.</p>
+        </div>
+        <div class = "content" id = "Watch" value = "Problem Solving Guide">
+            <img src = "ProblemSolvingGuide.png"/>
+            <h4>Problem Solving Guide</h4>
+            <p>This guide will teach you how to solve problems practically in a step-by-step process.</p>
+        </div>
+        <div class = "content" id = "Read" value = "3-Minute Breathing Exercise">
+            <img src = "BreathingExercise.png"/>
+            <h4>3-Minute Breathing Exercise</h4>
+            <p>This video guides you through a simple 3-minute breathing exercise you can use to reduce tension and anxiety.</p> 
+        </div>
+        <div class = "content" id = "Read" value = "10 Way to Support Someone">
+            <img src = "SupportSomeone.png"/>
+            <h4>10 Way to Support Someone</h4>
+            <p>It can be hard to know how to support a loved one experiencing mental distress. Here's some suggestions that may help</p>
+        </div>
+        <div class = "content" id = "Read" value = "What Matters Most">
+            <img src = "WhatMattersMost.png"/>
+            <h4>What Matters Most</h4>
+            <p>this resource helps you find ways to stay connected to the things that matter most to you during this difficult time.</p>
+        </div>
+        <div class = "content" id = "Worksheet" value = "Positive Hunt Worksheet">
+            <img src = "PositiveHunt.png"/>
+            <h4>Positive Hunt Worksheet</h4>
+            <p>Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started</p>
+        </div>
+        <div class = "content" id = "Read" value = "About Self Esteem">
+            <img src = "AboutSelf.png"/>
+            <h4>About Self Esteem</h4>
+            <p>Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started</p>
+        </div>
+        <div class = "content" id = "Read" value = "Thinking Traps">
+            <img src = "ThinkingTraps.png"/>
+            <h4>Thinking Traps</h4>
+            <p>This visual guide that demonstrates the different unhelpful thinking patterns we fall in to.
+        </div>
+        <div class = "content" id = "Read" value = "100 Things To Do">
+            <img src = "100ThingsToDo.png"/>
+            <h4>100 Things To Do</h4>
+            <p>Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started.
+        </div>
+    </div>
+</body>
+</html>

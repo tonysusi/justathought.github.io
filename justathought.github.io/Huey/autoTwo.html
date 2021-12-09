@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/css/autoComplete.min.css">
+    <link rel = "stylesheet" href = "autoTwo.css"/>
+</head>
+
+<body>
+    <div class="autoComplete_wrapper">
+        <input id="autoComplete" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+    <script>
+        var content;
+        const autoCompleteJS = new autoComplete({
+            selector: "#autoComplete",
+            placeHolder: "Search for Food...",
+            data: {
+                src: [
+                    {"food":"Sauce - Thousand Island", "country": "American"},
+                    {"food":"Wild-Boar - Tenderloin", "country": "American"}, 
+                    {"food":"Goat - Whole Cut",  "country": "Philippines"},
+                    {"food":"Chicken - Japanese-Styled Fried Chicken", "country" : "Japanese"}],
+                keys:["food", "country"],
+                cache: true,
+                filter: (list) => {
+      // Filter duplicates
+      // incase of multiple data keys usage
+      const filteredResults = Array.from(
+        new Set(list.map((value) => value.match))
+      ).map((food) => {
+        return list.find((value) => value.match === food);
+      });
+      return filteredResults;
+    }
+            },
+            resultsList: {
+                element: (list, data) => {
+                    
+                    for(i = 0; i < data.results.length; i++)
+                    {
+                        document.getElementById("autoComplete_result_"+i).setAttribute("class", document.getElementById("autoComplete_result_"+i).textContent);
+                    }
+                    content=document.querySelectorAll("div.content");
+                    try{
+                    for(i = 0; i < content.length;)
+                    {
+                        console.log(content.length);
+                        console.log(i);
+                        for(j = 0; j< data.results.length; j++)
+                        {
+                            console.log(content[i].getAttribute('value'));
+                            console.log(data.results[j].value);
+                            if(content[i].getAttribute('value')==document.getElementById("autoComplete_result_"+j).className)
+                            {
+                                content[i].style.visibility="visible";
+                                j=data.results.length;
+                            }
+
+                            else if(content[i].id===document.getElementById("autoComplete_result_"+j).className)
+                            {
+                                content[i].style.visibility="visible";
+                                j=data.results.length;
+                            }
+                            else
+                            {
+                                content[i].style.visibility="hidden";
+                                content[i].style.display = "none";
+                            }
+                        }
+                        i++;
+                    }
+                }
+                catch(e)
+                {
+                    console.log(e);
+                }
+                    console.log(list);
+                    if (!data.results.length) {
+                        // Create "No Results" message element
+                        const message = document.createElement("div");
+                        // Add class to the created element
+                        message.setAttribute("class", "no_result");
+                        // Add message text content
+                        message.innerHTML = `<span>Found No Results for "${data.query}"</span>`;
+                        // Append message element to the results list
+                        list.prepend(message);
+                        for(i = 0; i<content.length; i++)
+                        {
+                            content[i].style.visibility = "hidden";
+                        }
+                        
+                    }
+                },
+                noResults: true,
+            },
+            resultItem: {
+                highlight:
+                {
+                    render:true
+                }
+            },
+            events: {
+                input: {
+                    selection: (event) => {
+                        var auto = document.getElementById("autoComplete");
+                        const feedback = event.detail;
+                        //alert(feedback.selection.value[feedback.selection.key]);
+                        autoCompleteJS.input.blur();
+                        // Prepare User's Selected Value
+                        const selection = feedback.selection.value;
+                        // Render selected choice to selection div
+                        auto.innerHTML = selection[feedback.selection.key];
+                        // Replace Input value with the selected value
+                        autoCompleteJS.input.value = selection[feedback.selection.key];
+                        // Console log autoComplete data feedback
+                    }
+                }
+            },
+            searchEngine:"loose",
+            maxResults:5,
+            trigger: (query) => {
+                console.log(query);
+                if(query.length == 0)
+                {
+                    for(i = 0; i < content.length; i++)
+                    {
+                        content[i].style.visibility = "visible";
+                        content[i].style.display = "block";
+                    }
+                }
+                return query.replace(/ /g, "").length; // Returns "Boolean"
+            },
+            
+        });
+    
+    </script>
+    <div id = "contentWrapper">
+        <div class = "content" id = "American" value="Sauce - Thousand Island">
+            <h4>Sauce - Thousand Island</h4>
+            <img src = "Images/homemade-thousand-island-6.jpeg"/>
+        </div>
+        <div class = "content" id = "American" value = "Wild-Boar - Tenderloin">
+            <h4>Wild-Boar - Tenderloin</h4>
+            <img src = "Images/tenderloin.jpeg"/>
+        </div>
+        <div class = "content" id = "Philippines" value = "Goat - Whole Cut">
+            <h4>Goat - Whole Cut</h4>
+            <img src = "Images/goatWholeCut.jpeg"/>
+        </div>
+        <div class = "content" id = "Japanese" value = "Chicken - Japanese-Styled Fried Chicken">
+            <h4>Chicken - Japanese-Styled Fried Chicken</h4>
+            <img src = "Images/karaage.jpeg"/>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 55" width="69" height="55">
+	<title>magnifyingGlass-svg</title>
+	<defs>
+		<image width="60" height="60" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOS4wODYiIGhlaWdodD0iMjkuNjA1IiB2aWV3Qm94PSIwIDAgMjkuMDg2IDI5LjYwNSI+CiAgPGcgaWQ9Ikdyb3VwXzYwNDkiIGRhdGEtbmFtZT0iR3JvdXAgNjA0OSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM5Ni45NjkgLTExNzYuNjI2KSByb3RhdGUoNDUpIj4KICAgIDxnIGlkPSJFbGxpcHNlXzEyIiBkYXRhLW5hbWU9IkVsbGlwc2UgMTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExMjMgNTQxKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyI+CiAgICAgIDxjaXJjbGUgY3g9IjEwLjI2NyIgY3k9IjEwLjI2NyIgcj0iMTAuMjY3IiBzdHJva2U9Im5vbmUiLz4KICAgICAgPGNpcmNsZSBjeD0iMTAuMjY3IiBjeT0iMTAuMjY3IiByPSI4Ljc2NyIgZmlsbD0ibm9uZSIvPgogICAgPC9nPgogICAgPGxpbmUgaWQ9IkxpbmVfMyIgZGF0YS1uYW1lPSJMaW5lIDMiIHkyPSI4LjgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExMzMuNjMzIDU2MC40MzQpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPC9nPgo8L3N2Zz4K"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #bea9d2 } 
+	</style>
+	<path id="Subtraction_1" class="shp0" d="M41.5 55L0 55L0 0L41.5 0C48.79 0 55.79 2.9 60.95 8.06C66.1 13.21 69 20.21 69 27.5C69 34.79 66.1 41.79 60.95 46.95C55.79 52.1 48.79 55 41.5 55Z" />
+	<use id="magnifyingGlassforReal" href="#img1" transform="matrix(0.5,0.004,-0.004,0.5,19.253,12)"/>
+</svg>
