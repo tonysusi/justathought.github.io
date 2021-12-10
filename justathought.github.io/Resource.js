@@ -1,4 +1,6 @@
 var input = document.getElementById("autoComplete");
+var content = document.querySelectorAll('div.content');
+var contentParagraph = document.querySelectorAll('div.content > p');
 function thing(){
     //test.style.opacity = "0.1";
 
@@ -26,9 +28,28 @@ input.addEventListener('keyup', (event) => {
         input.blur();
     }
   });
+input.addEventListener('keyup', paragraphCheck);
+function paragraphCheck()
+{
+    if (input.value !== "" && input.value.length > 3)
+    {
+        for(i = 0; i < contentParagraph.length; i++)
+        {
+            if (contentParagraph[i].textContent.toLowerCase().includes(input.value.toLowerCase()))
+            {
+                content[i].style.visibility = "visible";
+                content[i].style.display = "block";
+            }
+            else
+            {
+                content[i].style.visibility = "hidden";
+                content[i].style.display = "none";
+            }
+        }
+    }
+}
 function buttonSearching(buttonText)
 {
-    var content = document.querySelectorAll('div.content');
     var buttonWrapperButtons = document.querySelectorAll('#buttonWrapper > button');
     var a=0;
     for(j = 0; j < buttonWrapperButtons.length; j++)
