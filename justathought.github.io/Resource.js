@@ -28,20 +28,42 @@ input.addEventListener('keyup', (event) => {
   });
 function buttonSearching(buttonText)
 {
-    console.log(buttonText);
     var content = document.querySelectorAll('div.content');
-    for(i = 0; i < content.length; i++)
+    var buttonWrapperButtons = document.querySelectorAll('#buttonWrapper > button');
+    var a=0;
+    for(j = 0; j < buttonWrapperButtons.length; j++)
     {
-        console.log(content[i].getAttribute('value'));
-        if(buttonText === content[i].getAttribute('value'))
+        if(buttonWrapperButtons[j].textContent === buttonText && buttonWrapperButtons[j].value === 'false')
         {
-            content[i].style.visibility = "visible";
-            content[i].style.display = "block";
+            input.value = buttonText;
+            buttonWrapperButtons[j].setAttribute('value', 'true');
+            a=j;
         }
         else
         {
-            content[i].style.visibility="hidden";
-            content[i].style.display = "none";
+            buttonWrapperButtons[j].setAttribute('value', 'false');
+        }
+    }
+    for(i = 0; i < content.length; i++)
+    {
+        if(buttonWrapperButtons[a].value==='true')
+        {
+            if(buttonText === content[i].getAttribute('value'))
+            {
+                content[i].style.visibility = "visible";
+                content[i].style.display = "block";
+            }
+            else
+            {
+                content[i].style.visibility="hidden";
+                content[i].style.display = "none";
+            }
+        }
+        else
+        {
+            input.value = "";
+            content[i].style.visibility = "visible";
+            content[i].style.display = "block";
         }
     }
 }
