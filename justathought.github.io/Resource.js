@@ -44,6 +44,7 @@ function paragraphCheck()
             {
                 content[i].style.visibility = "hidden";
                 content[i].style.display = "none";
+                
             }
         }
     }
@@ -58,11 +59,15 @@ function buttonSearching(buttonText)
         {
             input.value = buttonText;
             buttonWrapperButtons[j].setAttribute('value', 'true');
+            buttonWrapperButtons[j].style.color = "white"
+            buttonWrapperButtons[j].style.backgroundColor = "#c9467f";
             a=j;
         }
         else
         {
             buttonWrapperButtons[j].setAttribute('value', 'false');
+            buttonWrapperButtons[j].style.color = "#c9467f";
+            buttonWrapperButtons[j].style.backgroundColor = "white"
         }
     }
     for(i = 0; i < content.length; i++)
@@ -85,6 +90,12 @@ function buttonSearching(buttonText)
             input.value = "";
             content[i].style.visibility = "visible";
             content[i].style.display = "block";
+            buttonWrapperButtons[0].style.color = "white"
+            buttonWrapperButtons[0].style.backgroundColor = "#c9467f";
+            buttonWrapperButtons[1].style.color = "white"
+            buttonWrapperButtons[1].style.backgroundColor = "#c9467f";
+            buttonWrapperButtons[2].style.color = "white"
+            buttonWrapperButtons[2].style.backgroundColor = "#c9467f";
         }
     }
 }

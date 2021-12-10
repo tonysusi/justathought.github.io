@@ -95,6 +95,10 @@
   {
     max-height: 310px;
   }
+  #buttonWrapper
+  {
+    position:relative; align-items: center; justify-content: center; display: flex;
+  }
   #contentWrapper
   {
     position: relative;
@@ -496,6 +500,15 @@ makes it look quite ugly*/
     padding-left: 5px;
     padding-right: 5px;
     margin-bottom:40px;
+  }
+  #buttonWrapper
+  {
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  #buttonWrapper button
+  {
+    margin: 8px 0;
   }
   }
 }
