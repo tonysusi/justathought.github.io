@@ -97,7 +97,7 @@
   }
   #buttonWrapper
   {
-    position:relative; align-items: center; justify-content: center; display: flex;
+    position:relative; align-items: center; justify-content: center; display: flex; z-index:1;
   }
   #contentWrapper
   {
@@ -220,7 +220,7 @@
     background-repeat: no-repeat;
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
      position:relative;
-     z-index:300;
+     z-index:600;
   }
 #column
 {
@@ -257,7 +257,7 @@ makes it look quite ugly*/
 .autoComplete_wrapper {
   display: inline-block;
   position: relative;
-  z-index: 310;
+  z-index: 600;
 }
 .autoComplete_wrapper > input {
   width: 370px;
@@ -285,7 +285,7 @@ makes it look quite ugly*/
   border-radius: 4px;
   background-color: #fff;
   border: 1px solid rgba(33, 33, 33, 0.1);
-  z-index: 500;
+  z-index: 600;
   outline: none;
 }
 .nav-resources a
@@ -308,7 +308,7 @@ makes it look quite ugly*/
   overflow: hidden;
   text-overflow: ellipsis;
   transition: all 0.2s ease;
-  z-index: 200;
+  z-index: 600;
 }
 
 .autoComplete_wrapper > ul > li::selection {
@@ -453,7 +453,7 @@ makes it look quite ugly*/
   }ƒ
   #headerContainer
   {
-    z-index:300;
+    z-index:550;
     padding:0%;
   }
   
