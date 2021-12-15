@@ -191,9 +191,9 @@
             </div>
             <div class = "container">
                 <div id = "buttonWrapper">
-                    <button onclick="buttonSearching(this.textContent)" value = "false">Anxiety</button>
-                    <button onclick="buttonSearching(this.textContent)" value = "false">Depression</button>
-                    <button onclick="buttonSearching(this.textContent)" value = "false">Wellbeing</button>
+                    <button onclick="buttonSearching(this.textContent)" buttonStatus = "notPressed">Anxiety</button>
+                    <button onclick="buttonSearching(this.textContent)" buttonStatus = "notPressed">Depression</button>
+                    <button onclick="buttonSearching(this.textContent)" buttonStatus = "notPressed">Wellbeing</button>
                 </div>
             </div>
             <div class = "container">
@@ -464,27 +464,33 @@ const autoCompleteJS = new autoComplete({
            console.log(data);
            console.log(list);
             buttonContent = document.querySelector("div#buttonWrapper button");
+            $('.content').css('visibility','hidden');
+            $('.content').css('display', 'none');
             try {
-              
+              for(a = 0; a < data.results.length; a++)
+              {
+                  document.getElementById("autoComplete_result_"+a).setAttribute("class",document.getElementById("autoComplete_result_"+a).textContent);
+              }
                 $('#contentWrapper').css('top', 0);
                 $('#contentWrapper').css('margin-bottom', 10); 
-               if(data.query.length >= 3)
-               {
-                for (i = 0; i < content.length;) {
-                    for (j = 0; j < data.matches.length; j++) {
-                        if (titleContent[i].textContent === data.matches[j].value.Title) {
+                    for (j = 0; j < data.matches.length; j++) { 
+                       for (i = 0; i < content.length; i++) {     
+                         console.dir(titleContent[i].textContent);
+                         console.dir(document.getElementById("autoComplete_result_"+j).className);         
+                        if (titleContent[i].textContent === document.getElementById("autoComplete_result_"+j).className) {
                            content[i].style.visibility = "visible";
-                            content[i].style.display = "block";
-                            j = data.results.length;
-                        } 
-                        else {
-                            content[i].style.visibility = "hidden";
-                            content[i].style.display = "none";
+                           content[i].style.display = "block";
+                           i = content.length;
+                        }
+                        else if(document.getElementById("autoComplete_result_"+j).className===content[i].getAttribute("data-tag"))
+                        {
+                           content[i].style.visibility = "visible";
+                           content[i].style.display = "block";
                         }
                     }
                     i++;
                 }
-               }
+               
             } catch (e) {
                 console.log(e);
             }
@@ -545,10 +551,6 @@ const autoCompleteJS = new autoComplete({
                 content[i].style.visibility = "visible";
                 content[i].style.display = "block";
             }
-        }
-        else
-        {
-           console.log(query);
         }
         return query.replace(/ /g, "").length; // Returns "Boolean"
     },

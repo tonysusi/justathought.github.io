@@ -2,7 +2,7 @@ var input = document.getElementById("autoComplete");
 var content = document.querySelectorAll('div.content');
 var contentParagraph = document.querySelectorAll('div.content > p');
 var contentTitle = document.querySelectorAll('div.content > h4');
-
+var buttonWrapperButtons = document.querySelectorAll('#buttonWrapper > button');
 function thing(){
     //test.style.opacity = "0.1";
 
@@ -31,6 +31,7 @@ input.addEventListener('keyup', (event) => {
     }
   });
 input.addEventListener('keyup', paragraphCheck);
+input.addEventListener('keyup',buttonSearching(this.value));
 //checks the paragraphs of the cards
 function paragraphCheck()
 {
@@ -96,34 +97,31 @@ function paragraphCheck()
                             }
                         }
                     }
-                        a++;
+                        
                         console.log(a);
                         x.setAttribute("id", "autoComplete_result_"+(a + searchLength));
+                        a++;
                         searchContainer.appendChild(x);
                     }
             }
         }
     }
-    
 }
 //starts when the buttons are pressed
 function buttonSearching(buttonText)
 {
-    var buttonWrapperButtons = document.querySelectorAll('#buttonWrapper > button');
     var a=0;
     for(j = 0; j < buttonWrapperButtons.length; j++)
     {
-        if(buttonWrapperButtons[j].textContent === buttonText && buttonWrapperButtons[j].value === 'false')
+        if(buttonWrapperButtons[j].textContent === buttonText)
         {
             input.value = buttonText;
-            buttonWrapperButtons[j].setAttribute('value', 'true');
             buttonWrapperButtons[j].style.color = "white"
             buttonWrapperButtons[j].style.backgroundColor = "#c9467f";
             a=j;
         }
         else
         {
-            buttonWrapperButtons[j].setAttribute('value', 'false');
             buttonWrapperButtons[j].style.color = "#c9467f";
             buttonWrapperButtons[j].style.backgroundColor = "white"
         }

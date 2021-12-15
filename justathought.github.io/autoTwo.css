@@ -168,7 +168,7 @@
     grid-template-columns: 30% 40% 30%;
     width: 100%;
     height: auto;
-  z-index:2;
+    z-index:2;
   }
   #headerContainer
   {
@@ -177,7 +177,7 @@
     max-height: 350px;
     margin-bottom: 20px;
   }
-  #middleColumn
+  .middleColumn
   {
     margin:auto;
     position:relative;
@@ -417,11 +417,8 @@ makes it look quite ugly*/
   }
   #header
   {
-    padding-top:0%;
-    margin-top: 0%;  
-    top:0%;
     grid-template-columns: 100%;
-    padding-bottom:0px;
+    padding-top:5%;
   }
   #contentWrapper
   {
@@ -453,8 +450,8 @@ makes it look quite ugly*/
   }ƒ
   #headerContainer
   {
-    z-index:550;
-    padding:0%;
+    position:relative;
+    margin:auto;
   }
   
   @media screen and (max-width: 720px)
