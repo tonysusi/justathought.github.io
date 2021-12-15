@@ -66,6 +66,8 @@ function paragraphCheck()
                     //check if there is a duplicate in searchList            
                     for(j = 0; j < searchList.length; j++)
                     {
+                        console.log(searchList[j].textContent);
+                        console.log(contentTitle[i].textContent);
                         console.log(searchList[j].textContent === contentTitle[i].textContent);
                         if(searchList[j].textContent === contentTitle[i].textContent)
                         {

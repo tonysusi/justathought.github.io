@@ -462,24 +462,29 @@ const autoCompleteJS = new autoComplete({
     resultsList: {
         element: (list, data) => {
            console.log(data);
+           console.log(list);
             buttonContent = document.querySelector("div#buttonWrapper button");
             try {
+              
                 $('#contentWrapper').css('top', 0);
-                $('#contentWrapper').css('margin-bottom', 10);
+                $('#contentWrapper').css('margin-bottom', 10); 
+               if(data.query.length >= 3)
+               {
                 for (i = 0; i < content.length;) {
                     for (j = 0; j < data.matches.length; j++) {
-                     console.log(titleContent[i].textContent === data.matches[j].value.Title||content[i].getAttribute("data-tag") === data.matches[j].value.DataTag); 
-                        if (titleContent[i].textContent === data.matches[j].value.Title||content[i].getAttribute("data-tag") === data.matches[j].value.DataTag) {
+                        if (titleContent[i].textContent === data.matches[j].value.Title) {
                            content[i].style.visibility = "visible";
                             content[i].style.display = "block";
                             j = data.results.length;
-                        } else {
+                        } 
+                        else {
                             content[i].style.visibility = "hidden";
                             content[i].style.display = "none";
                         }
                     }
                     i++;
                 }
+               }
             } catch (e) {
                 console.log(e);
             }
