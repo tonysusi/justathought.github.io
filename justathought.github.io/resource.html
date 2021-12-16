@@ -239,6 +239,11 @@
           searchEngine: "strict",
           maxResults: 5,
           trigger: (query) => {
+             if(query.length == 0)
+             {
+                $('.content').css('visibility', 'visible');
+                $('.content').css('display', 'block');
+             }
               return query.replace(/ /g, "").length; // Returns "Boolean"
           },
       });
@@ -308,23 +313,23 @@
                </ul>
             </nav>
          </div>
-            <div id = "contentAndHeaderContainer">
-               <div id = "headerContainer">
+            <div class = "contentAndHeaderContainer">
+               <div class = "headerContainer">
                    <div class = "container">
-                  <div id = "header">
-                     <div id = "column" class = "hImageLeft">
+                     <div id = "header">
+                     <div class = "column" id = "hImageLeft">
                         <img src = "uploads/ResourceImage/LeftSideResource.png">
                      </div>
-                     <div id = "column" class = "middleColumn">
+                     <div class = "column" id = "middleColumn">
                         <div id = "middleColumnContent">
                         <h1>The Resource Hub</h1>
                         <p>Stay on track of your mental wellbeing with these helpful resource guides.</p>
                         <div class="autoComplete_wrapper">
-                            <input id="autoComplete" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="2048" tabindex="1" onkeyup="buttonSearching(this.value); inputZero(this.value.length)">
+                            <input id="autoComplete" class="magnifyingGlass" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="2048" tabindex="1" onkeyup="buttonSearching(this.value); inputZero(this.value.length)">
                         </div>
                         </div>
                      </div>
-                     <div id = "column" class = "hImageRight">
+                     <div class = "column" id = "hImageRight">
                         <img src = "uploads/ResourceImage/RightResource.png">
                      </div>
                      </div>
@@ -340,115 +345,115 @@
                 </div>
             </div>
             <div class = "container">
-               <div id = "contentWrapper">
+               <div class = "contentWrapper">
                   <div class = "content" data-tag = "Anxiety">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/WorryChart.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">The Worry Chart</h4>
                      <p>This simple "worry chart" can help you learn to let go of negative thoughts and "worries" that may</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Wellbeing">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/StayingOnTrack.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/audio.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/audio.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">Staying on Track audio course</h4>
                      <p>Listen to the audio version of our Staying on Track quick course, to help you through times of stress and uncertainty.</p>
-                     <button id = "contentButton">Listen</button>
+                     <button class = "contentButton">Listen</button>
                   </div>
                   <div class = "content" data-tag = "Wellbeing">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/ImproveYourSleep.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">10 Tips to Improve Your Sleep</h4>
                      <p>Sleep plays an important role in good health and wellbeing.  Learn some simple habits that really help</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Wellbeing">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/SeeingThingsClearly.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">Seeing Things Clearly resource</h4>
                      <p>The resource will teach you how to challenge your thoughts and see things more clearly.</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Wellbeing">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/ProblemSolvingGuide.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/video.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/video.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">Problem Solving Guide</h4>
                      <p>This guide will teach you how to solve problems practically in a step-by-step process.</p>
-                     <button id = "contentButton">Watch</button>
+                     <button class = "contentButton">Watch</button>
                   </div>
                   <div class = "content" data-tag = "Anxiety">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/BreathingExercise.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">3-Minute Breathing Exercise</h4>
                      <p>This video guides you through a simple 3-minute breathing exercise you can use to reduce tension and anxiety.</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Anxiety">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/SupportSomeone.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">10 Way to Support Someone</h4>
                      <p>It can be hard to know how to support a loved one experiencing mental distress. Here's some suggestions that may help</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Depression">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/WhatMattersMost.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">What Matters Most</h4>
                      <p>this resource helps you find ways to stay connected to the things that matter most to you during this difficult time.</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Wellbeing">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/PositiveHunt.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/write.svg)">
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/write.svg)">
                         </button>
                      </div>
                      <h4 class = "contentTitle">Positive Hunt Worksheet</h4>
                      <p>Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started</p>
-                     <button id = "contentButton">Worksheet</button>
+                     <button class = "contentButton">Worksheet</button>
                   </div>
                   <div class = "content" data-tag = "Wellbeing">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/AboutSelfEsteem.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">About Self Esteem</h4>
                      <p>Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Anxiety">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/ThinkingTraps.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">Thinking Traps</h4>
                      <p>This visual guide that demonstrates the different unhelpful thinking patterns we fall in to.</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                   <div class = "content" data-tag = "Wellbeing">
-                     <div id = "container">
+                     <div class = "cardContainer">
                         <img src = "uploads/ResourceImage/100ThingsToDo.png"/>
-                        <button id = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "contentTitle">100 Things To Do</h4>
                      <p>Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started.</p>
-                     <button id = "contentButton">Read</button>
+                     <button class = "contentButton">Read</button>
                   </div>
                </div>
             </div>

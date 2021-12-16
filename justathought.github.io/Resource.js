@@ -5,16 +5,16 @@ function thing(){
     if(document.getElementById("page_wrapper").className=="wrapper resources")
     {
         $(".nav-container").css('opacity', 1);
-        $("#contentAndHeaderContainer").css('opacity',0.1);
-        document.getElementById("contentAndHeaderContainer").style.transition="opacity 0.5s";
+        $(".contentAndHeaderContainer").css('opacity',0.1);
+        document.getElementsByClassName("contentAndHeaderContainer").style.transition="opacity 0.5s";
         $("#container").css('opacity',0.1);
         $(".container").css('opacity',0.1);
         $("footer").css('opacity',0.1);
     }
     else
     {
-        $("#contentAndHeaderContainer").css('opacity',1);
-        $("#container").css('opacity',1);
+        $(".contentAndHeaderContainer").css('opacity',1);
+        $(".cardContainer").css('opacity',1);
         $(".container").css('opacity',1);
         $("footer").css('opacity',1);
     }
@@ -138,8 +138,13 @@ function inputZero(valueLength)
     console.log(valueLength);
     if(valueLength === 0)
     {
+        input.setAttribute('class', 'magnifyingGlass');
         $('.content').css('visibility', 'visible');
         $('.content').css('display','block');
+    }
+    else
+    {
+        input.setAttribute('class', 'noGlass');
     }
 }
 function buttonSearching(buttonText)
@@ -149,7 +154,8 @@ function buttonSearching(buttonText)
     console.log(buttonText);
     for(j = 0; j < buttonWrapperButtons.length; j++)
     {
-        if(buttonWrapperButtons[j].textContent === buttonText && buttonWrapperButtons[j].getAttribute("buttonStatus")==="notPressed")
+        console.log(buttonWrapperButtons[j].textContent === buttonText);
+        if(buttonWrapperButtons[j].textContent === buttonText)
         {
             buttonWrapperButtons[j].setAttribute('buttonStatus', 'pressed');
             buttonWrapperButtons[j].style.color = "white";
@@ -170,16 +176,7 @@ function buttonChange(buttonIndex, buttonsPressed)
 {
     console.log(buttonIndex);
     console.log(buttonsPressed);
-    //what do you want?
-    //assuming button is already pressed since buttonChange is everything after the buttonSearching has searched if
-    //buttonText is the same
-    //Ok. so what do you need now?
-    //is it in buttonChange or is it in buttonSearching?
-    //buttonChange should only be in charge of changing the looks of the button
 
-    /*
-     when do you clear the input value?
-    */
     if(buttonsPressed)
     {
         for(i = 0; i < content.length; i++)
