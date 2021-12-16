@@ -1,6 +1,4 @@
-var input = document.getElementById("autoComplete");
-var content = document.querySelectorAll('div.content');
-var contentParagraph = document.querySelectorAll('div.content > p');
+
 function thing(){
     //test.style.opacity = "0.1";
 
@@ -21,60 +19,172 @@ function thing(){
         $("footer").css('opacity',1);
     }
 }
-input.addEventListener('keyup', (event) => {
-    const keyName = event.key;
-    if (keyName === 'Enter')
-    {
-        input.blur();
-    }
-  });
-input.addEventListener('keyup', paragraphCheck);
+
+function resourceOnload(){
+    input = document.getElementById("autoComplete");
+    content = document.querySelectorAll('div.content');
+    contentParagraph = document.querySelectorAll('div.content > p');
+    contentTitle = document.querySelectorAll('div.content > h4');
+    buttonWrapperButtons = document.querySelectorAll('#buttonWrapper > button');
+    input.addEventListener('keyup', (event) => {
+        const keyName = event.key;
+        if (keyName === 'Enter')
+        {
+            input.blur();
+        }
+      });
+    input.addEventListener('keyup', paragraphCheck);
+    buttonsPressed = false;
+}
+
+//checks the paragraphs of the cards
 function paragraphCheck()
 {
-    if (input.value !== "" && input.value.length > 3)
+    var searchContainer = document.getElementById("autoComplete_list_1");
+    var searchList = document.querySelectorAll('#autoComplete_list_1 > li');
+    var searchLength = searchList.length;
+    var a = 0;
+    if (input.value !== "" && input.value.length >= 3)
     {
-        for(i = 0; i < contentParagraph.length; i++)
+        for(i = 0; i < (contentParagraph.length); i++)
         {
             if (contentParagraph[i].textContent.toLowerCase().includes(input.value.toLowerCase()))
             {
-                content[i].style.visibility = "visible";
-                content[i].style.display = "block";
-            }
-            else
-            {
-                content[i].style.visibility = "hidden";
-                content[i].style.display = "none";
-                
+                    var duplicateCheck = false;
+                    var x = document.createElement("li");
+                    var t = document.createTextNode(contentTitle[i].textContent);
+                    x.setAttribute("role", "option");
+                    x.appendChild(t);
+                    content[i].style.visibility = "visible";
+                    content[i].style.display = "block";
+                    try
+                    {
+                    if(document.body.contains(document.querySelector('.no_result')))
+                        {
+                            document.querySelector('.no_result').style.visibility = "hidden";
+                            document.querySelector('.no_result').style.display = "none";
+                        }
+                    }
+                    catch(e)
+                    {
+                        console.log(e);
+                    }
+                    //check if there is a duplicate in searchList            
+                    for(j = 0; j < searchList.length; j++)
+                    {
+                        if(searchList[j].textContent === contentTitle[i].textContent)
+                        {
+                            duplicateCheck = true;
+                        }
+                    }
+                    //if the duplicate check isnt activated      
+                    if(!duplicateCheck)
+                    { 
+                        //if the LI in question is clicked, then the following div will show up
+                        x.onclick = function(){
+                        var justify = this.textContent;
+                        input.value = justify;
+                        for(i = 0; i < content.length; i++)
+                        {
+                            if(contentTitle[i].textContent === justify)
+                            {
+                                content[i].style.visibility = "visible";
+                                content[i].style.display = "block";
+                            }
+                            else
+                            {
+                                content[i].style.visibility = "hidden";
+                                content[i].style.display = "none";
+                            }
+                        }
+                    }
+                        x.setAttribute("id", "autoComplete_result_"+(a + searchLength));
+                        a++;
+                        searchContainer.appendChild(x);
+                    }
             }
         }
     }
 }
+
+//input.addEventListener('keyup', buttonSearching(input.value));
+//starts when the buttons are pressed
+//searches if texts in the button is the same as the value of input/buttons
+//and shows the cards up
+function buttonPressed(buttonValue)
+{
+    if(buttonValue.getAttribute("buttonStatus") === "notPressed")
+    {   
+        
+        input.value = buttonValue.textContent;
+        buttonsPressed = true;
+        $('#autoComplete').keyup();
+        //buttonSearching(buttonValue.textContent);
+    }
+    else
+    {
+        input.value = "";
+        buttonsPressed = false;
+        $('#autoComplete').keyup();
+        buttonValue.setAttribute("buttonStatus","notPressed");
+        //buttonChange(0,buttonsPressed);
+    }
+    
+}
+//checks if input is zero or not
+//if it is, then show every content
+function inputZero(valueLength)
+{
+    console.log(valueLength);
+    if(valueLength === 0)
+    {
+        $('.content').css('visibility', 'visible');
+        $('.content').css('display','block');
+    }
+}
 function buttonSearching(buttonText)
 {
-    var buttonWrapperButtons = document.querySelectorAll('#buttonWrapper > button');
+    buttonsPressed = false;
     var a=0;
+    console.log(buttonText);
     for(j = 0; j < buttonWrapperButtons.length; j++)
     {
-        if(buttonWrapperButtons[j].textContent === buttonText && buttonWrapperButtons[j].value === 'false')
+        if(buttonWrapperButtons[j].textContent === buttonText && buttonWrapperButtons[j].getAttribute("buttonStatus")==="notPressed")
         {
-            input.value = buttonText;
-            buttonWrapperButtons[j].setAttribute('value', 'true');
-            buttonWrapperButtons[j].style.color = "white"
-            buttonWrapperButtons[j].style.backgroundColor = "#c9467f";
+            buttonWrapperButtons[j].setAttribute('buttonStatus', 'pressed');
+            buttonWrapperButtons[j].style.color = "white";
+            buttonWrapperButtons[j].style.backgroundColor = "#c9467f"
             a=j;
+            buttonsPressed = true;
         }
         else
         {
-            buttonWrapperButtons[j].setAttribute('value', 'false');
+            buttonWrapperButtons[j].setAttribute('buttonStatus', 'notPressed');
             buttonWrapperButtons[j].style.color = "#c9467f";
             buttonWrapperButtons[j].style.backgroundColor = "white"
         }
     }
-    for(i = 0; i < content.length; i++)
+    buttonChange(a, buttonsPressed);
+}
+function buttonChange(buttonIndex, buttonsPressed)
+{
+    console.log(buttonIndex);
+    console.log(buttonsPressed);
+    //what do you want?
+    //assuming button is already pressed since buttonChange is everything after the buttonSearching has searched if
+    //buttonText is the same
+    //Ok. so what do you need now?
+    //is it in buttonChange or is it in buttonSearching?
+    //buttonChange should only be in charge of changing the looks of the button
+
+    /*
+     when do you clear the input value?
+    */
+    if(buttonsPressed)
     {
-        if(buttonWrapperButtons[a].value==='true')
+        for(i = 0; i < content.length; i++)
         {
-            if(buttonText === content[i].getAttribute('value'))
+            if(input.value === content[i].getAttribute('data-tag'))
             {
                 content[i].style.visibility = "visible";
                 content[i].style.display = "block";
@@ -85,17 +195,14 @@ function buttonSearching(buttonText)
                 content[i].style.display = "none";
             }
         }
-        else
+    }
+    else
+    {
+        for(i = 0; i < buttonWrapperButtons.length; i++)
         {
-            input.value = "";
-            content[i].style.visibility = "visible";
-            content[i].style.display = "block";
-            buttonWrapperButtons[0].style.color = "white"
-            buttonWrapperButtons[0].style.backgroundColor = "#c9467f";
-            buttonWrapperButtons[1].style.color = "white"
-            buttonWrapperButtons[1].style.backgroundColor = "#c9467f";
-            buttonWrapperButtons[2].style.color = "white"
-            buttonWrapperButtons[2].style.backgroundColor = "#c9467f";
+            buttonWrapperButtons[i].style.color = "white";
+            buttonWrapperButtons[i].style.backgroundColor = "#c9467f"
         }
     }
+    
 }

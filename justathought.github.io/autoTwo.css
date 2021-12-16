@@ -97,7 +97,7 @@
   }
   #buttonWrapper
   {
-    position:relative; align-items: center; justify-content: center; display: flex;
+    position:relative; align-items: center; justify-content: center; display: flex; z-index:1;
   }
   #contentWrapper
   {
@@ -168,7 +168,7 @@
     grid-template-columns: 30% 40% 30%;
     width: 100%;
     height: auto;
-  z-index:2;
+    z-index:2;
   }
   #headerContainer
   {
@@ -177,7 +177,7 @@
     max-height: 350px;
     margin-bottom: 20px;
   }
-  #middleColumn
+  .middleColumn
   {
     margin:auto;
     position:relative;
@@ -220,7 +220,7 @@
     background-repeat: no-repeat;
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
      position:relative;
-     z-index:300;
+     z-index:600;
   }
 #column
 {
@@ -257,7 +257,7 @@ makes it look quite ugly*/
 .autoComplete_wrapper {
   display: inline-block;
   position: relative;
-  z-index: 310;
+  z-index: 600;
 }
 .autoComplete_wrapper > input {
   width: 370px;
@@ -285,7 +285,7 @@ makes it look quite ugly*/
   border-radius: 4px;
   background-color: #fff;
   border: 1px solid rgba(33, 33, 33, 0.1);
-  z-index: 500;
+  z-index: 600;
   outline: none;
 }
 .nav-resources a
@@ -308,7 +308,7 @@ makes it look quite ugly*/
   overflow: hidden;
   text-overflow: ellipsis;
   transition: all 0.2s ease;
-  z-index: 200;
+  z-index: 600;
 }
 
 .autoComplete_wrapper > ul > li::selection {
@@ -417,11 +417,8 @@ makes it look quite ugly*/
   }
   #header
   {
-    padding-top:0%;
-    margin-top: 0%;  
-    top:0%;
     grid-template-columns: 100%;
-    padding-bottom:0px;
+    padding-top:5%;
   }
   #contentWrapper
   {
@@ -453,8 +450,8 @@ makes it look quite ugly*/
   }ƒ
   #headerContainer
   {
-    z-index:300;
-    padding:0%;
+    position:relative;
+    margin:auto;
   }
   
   @media screen and (max-width: 720px)
