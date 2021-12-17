@@ -138,8 +138,8 @@
             return JSON.parse(JSONarray);
       }
       
-      const resourceArray = manufactureArray(['Title', 'DataTag'], content, titleContent);
-      const autoCompleteJS = new autoComplete({
+   const resourceArray = manufactureArray(['Title', 'DataTag'], content, titleContent);
+   const autoCompleteJS = new autoComplete({
           selector: "#autoComplete",
           placeHolder: "Search...",
           data: {
@@ -159,7 +159,11 @@
           },
           resultsList: {
               element: (list, data) => {
-                  buttonContent = document.querySelector("div#buttonWrapper button");
+               const message = document.createElement("div");
+               // Append message element to the results list
+               message.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
+               list.prepend(message);
+               buttonContent = document.querySelector("div#buttonWrapper button");
                   $('.content').css('visibility','hidden');
                   $('.content').css('display', 'none');
                   try {
@@ -188,7 +192,6 @@
                       console.log(a);
                   }
                   if (!data.results.length) {
-                     
                       // Create "No Results" message element
                       const message = document.createElement("div");
                       // Add class to the created element
@@ -237,10 +240,11 @@
               }
           },
           searchEngine: "strict",
-          maxResults: 5,
+          maxResults: 15,
           trigger: (query) => {
              if(query.length == 0)
              {
+                $('#autoComplete').keyup();
                 $('.content').css('visibility', 'visible');
                 $('.content').css('display', 'block');
              }

@@ -1,4 +1,5 @@
-
+//start of code. probably name it lol
+//blurs and unblurs the whole body
 function thing(){
     //test.style.opacity = "0.1";
 
@@ -19,7 +20,8 @@ function thing(){
         $("footer").css('opacity',1);
     }
 }
-
+//when website has been loaded, call this function.
+//adds events to autocomplete searchbar
 function resourceOnload(){
     input = document.getElementById("autoComplete");
     content = document.querySelectorAll('div.content');
@@ -147,6 +149,7 @@ function inputZero(valueLength)
         input.setAttribute('class', 'noGlass');
     }
 }
+//matches the buttons pressed and looks the matches for everything
 function buttonSearching(buttonText)
 {
     buttonsPressed = false;
@@ -155,7 +158,7 @@ function buttonSearching(buttonText)
     for(j = 0; j < buttonWrapperButtons.length; j++)
     {
         console.log(buttonWrapperButtons[j].textContent === buttonText);
-        if(buttonWrapperButtons[j].textContent === buttonText)
+        if(buttonWrapperButtons[j].textContent.toLowerCase() === buttonText.toLowerCase())
         {
             buttonWrapperButtons[j].setAttribute('buttonStatus', 'pressed');
             buttonWrapperButtons[j].style.color = "white";
@@ -172,11 +175,9 @@ function buttonSearching(buttonText)
     }
     buttonChange(a, buttonsPressed);
 }
+//shows which button to show when buttons are pressed
 function buttonChange(buttonIndex, buttonsPressed)
 {
-    console.log(buttonIndex);
-    console.log(buttonsPressed);
-
     if(buttonsPressed)
     {
         for(i = 0; i < content.length; i++)
@@ -197,8 +198,8 @@ function buttonChange(buttonIndex, buttonsPressed)
     {
         for(i = 0; i < buttonWrapperButtons.length; i++)
         {
-            buttonWrapperButtons[i].style.color = "white";
-            buttonWrapperButtons[i].style.backgroundColor = "#c9467f"
+            buttonWrapperButtons[i].style.color = "#c9467f";
+            buttonWrapperButtons[i].style.backgroundColor = "white"
         }
     }
     

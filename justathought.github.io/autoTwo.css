@@ -99,6 +99,13 @@
   {
     position:relative; align-items: center; justify-content: center; display: flex; z-index:1;
   }
+  #buttonWrapper button
+  {
+    margin: 0px 3px !important;
+    box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
+    color: #c9467f;
+    background-color: white;
+  }
   .contentWrapper
   {
     position: relative;
@@ -206,8 +213,8 @@
   }
   #autoComplete
   {
-    width:100%;
-    max-width: 350px;
+    width:90%;
+    min-width: 300px;
     height:45px;
     border-radius:50px;
     border-color: #cdcff8;
@@ -220,6 +227,7 @@
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
      position:relative;
      z-index:600;
+     margin-bottom: 0px;
   }
   .magnifyingGlass
   {
@@ -244,6 +252,7 @@ these weird black thing on their edges which
 makes it look quite ugly*/
 .small
 {
+  border: 2px solid #4E4B6D !important;
   width:50px !important;
   height: 50px;
   background-color: white;
@@ -253,7 +262,7 @@ makes it look quite ugly*/
   cursor: default;
   outline: 1;
   pointer-events: none;
-  border: 2px solid #4E4B6D;
+  
 }
 
 /*autoComplete stuff here*/
@@ -505,10 +514,11 @@ makes it look quite ugly*/
   {
     flex-direction: column;
     margin-bottom: 8px;
+
   }
   #buttonWrapper button
   {
-    margin: 8px 0;
+    margin-bottom: 20px;
   }
   }
 }
