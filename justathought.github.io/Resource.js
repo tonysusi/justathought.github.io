@@ -40,7 +40,7 @@ function resourceOnload(){
 }
 
 //checks the paragraphs of the cards
-function paragraphCheck()
+function paragraphCheck(matchArrayList, resultsArrayList)
 {
     var searchContainer = document.getElementById("autoComplete_list_1");
     var searchList = document.querySelectorAll('#autoComplete_list_1 > li');
@@ -82,6 +82,9 @@ function paragraphCheck()
                     //if the duplicate check isnt activated      
                     if(!duplicateCheck)
                     { 
+                        //pushes the list into the result and list array so the library can count the matches in the paragraph check
+                        matchArrayList.push(contentTitle[i].textContent);
+                        resultsArrayList.push(contentTitle[i].textContent);
                         //if the LI in question is clicked, then the following div will show up
                         x.onclick = function(){
                         var justify = this.textContent;
@@ -147,8 +150,16 @@ function inputZero(valueLength)
     else
     {
         input.setAttribute('class', 'noGlass');
+        
     }
 }
+    function showCoords(event, eleTest)
+    {
+        var rect = eleTest.getBoundingClientRect();
+        var x = event.clientX;
+        var y = event.clientY;
+        console.log(x + " ," + y + " ," + rect.x + ", " + rect.y);
+    }
 //matches the buttons pressed and looks the matches for everything
 function buttonSearching(buttonText)
 {

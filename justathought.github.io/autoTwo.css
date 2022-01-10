@@ -217,7 +217,7 @@
     min-width: 300px;
     height:45px;
     border-radius:50px;
-    border-color: #cdcff8;
+    border-color: #cdcff8; 
     color: var(--searchWordColor);
     padding-left: 20px;
     padding-right:20px;
@@ -232,6 +232,11 @@
   .magnifyingGlass
   {
     background: url(uploads/ResourceImage/magnifyingGlassCopy2.png);
+  }
+  .noGlass
+  {
+    background: url(uploads/ResourceImage/xButton-removebg-preview.png);
+    background-size: 40px;
   }
 .column
 {
@@ -514,11 +519,10 @@ makes it look quite ugly*/
   {
     flex-direction: column;
     margin-bottom: 8px;
-
   }
   #buttonWrapper button
   {
-    margin-bottom: 20px;
+    margin: 3px 0px !important;
   }
   }
 }
