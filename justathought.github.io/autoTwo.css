@@ -115,14 +115,14 @@
     left: 0%;
     transition: ease all 0.3s;
   }
-  .content img
+  .card img
   {
     justify-content: center;
     width : 100%;
     height:auto;
     margin-bottom: 10%;
   }
-  .content
+  .card
   {
     max-width:290px;
     display:block;
@@ -137,7 +137,7 @@
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
 
   }
-  .content p
+  .card p
   {
     padding-bottom: 12%;
     text-align: center;
@@ -146,7 +146,7 @@
     font-family: 'Montserrat';
     margin-bottom: 18px;
   }
-  .content button
+  .card button
   {
     border-radius: 75px;
     color: white ;
@@ -155,7 +155,7 @@
     border-style: none;
     z-index:1;
   }
-  .content .contentButton
+  .card .card__Button
   {
     position:absolute;
     bottom:0;
@@ -184,13 +184,13 @@
     max-height: 350px;
     margin-bottom: 20px;
   }
-  #middleColumn
+  #header__autoComplete
   {
     margin:auto;
     position:relative;
     z-index:10;
   }
-  #squigglyHeader
+  #header__squigglyHeader
   {
   position: relative;
   top: 100%;
@@ -206,7 +206,7 @@
   z-index: 1;
   width:100%;
   }
-  #squigglyHeader img
+  #header__squigglyHeader img
   {
     position:relative;
     z-index: 1;
@@ -248,7 +248,7 @@
   text-align:center;
   /* padding-top: 10%; */
 }
-#hImageLeft
+#header__imageLeft
 {
   right: 0;
 }
@@ -359,19 +359,19 @@ makes it look quite ugly*/
   }
 }
 /* Container needed to position the button. Adjust the width as needed */
-.cardContainer {
+.card__ImageContainer {
   position: relative;
   width: 100%;
 }
 
 /* Make the image responsive */
-.cardContainer img {
+.card__ImageContainer img {
   width: 100%;
   height: auto;
 }
 
 /* Style the button and place it in the middle of the container/image */
-.cardContainer .small {
+.card__ImageContainer .small {
   position: absolute;
   top: 80%;
   left: 50%;
@@ -391,7 +391,7 @@ makes it look quite ugly*/
   font-size: 42px;
   color: #4E4B6D;
 }
-.content h4 
+.card h4 
 {
   color:#4E4B6D;
   text-align: center;
@@ -416,7 +416,7 @@ makes it look quite ugly*/
 }
 
 @media screen and (max-width: 991px){
-  .content
+  .card
   {
     display:block;
     text-align: center;
@@ -445,15 +445,15 @@ makes it look quite ugly*/
     padding-left: 5%;
     padding-right:5%;
   }
-  .content h1
+  .card h1
   {
     margin-top: 20%;
   }
-  .contentButton
+  .card__Button
   {
     bottom:0;
   }
-  #squigglyHeader
+  #header__squigglyHeader
   {
     position: relative;
     top: 100%;
@@ -473,12 +473,12 @@ makes it look quite ugly*/
   
   @media screen and (max-width: 720px)
   {
-    #headerContainer .container
+    #headerContainer #container
     {
       min-height: 30px;
       padding-bottom:clamp(1px, 1%, 15px);
     }
-    .column #hImageLeft
+    .column #header__imageLeft
     {
       padding:0px;
 
@@ -492,22 +492,22 @@ makes it look quite ugly*/
     padding-right:auto;
   }
 
-  .cardContainer img
+  .card__ImageContainer img
   {
     display: none;
     visibility: hidden !important;
   } 
 
-  .cardContainer
+  .card__ImageContainer
   {
     margin-bottom: 12%;
   }
 
-  .content h1
+  .card h1
   {
     margin-top: 20%;
   }
-  .content
+  .card
   {
     width:100%;
     min-width:100px;

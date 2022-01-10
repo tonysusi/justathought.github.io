@@ -158,7 +158,7 @@ function inputZero(valueLength)
         var rect = eleTest.getBoundingClientRect();
         var x = event.clientX;
         var y = event.clientY;
-        console.log(x + " ," + y + " ," + rect.x + ", " + rect.y);
+        console.log(x + " ," + y + " ," + rect.x + ", " + rect.y + " ," + rect.width);
     }
 //matches the buttons pressed and looks the matches for everything
 function buttonSearching(buttonText)
