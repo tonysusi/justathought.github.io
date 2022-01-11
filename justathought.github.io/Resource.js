@@ -35,7 +35,6 @@ function resourceOnload(){
             input.blur();
         }
       });
-    input.addEventListener('keyup', paragraphCheck);
     buttonsPressed = false;
 }
 
@@ -150,15 +149,26 @@ function inputZero(valueLength)
     else
     {
         input.setAttribute('class', 'noGlass');
-        
     }
 }
-    function showCoords(event, eleTest)
+//deletes the value of autoComplete bar
+    function clearAutoComplete(event, eleTest)
     {
         var rect = eleTest.getBoundingClientRect();
         var x = event.clientX;
         var y = event.clientY;
         console.log(x + " ," + y + " ," + rect.x + ", " + rect.y + " ," + rect.width);
+        console.log(rect.x + rect.width);
+        console.log(rect.x + rect.width -55);
+        if(input.className==='noGlass')
+        {
+            // &&(y<rect.y + rect.height && y < rect.y+rect.height-55)
+            if(x < (rect.x + rect.width) && x > (rect.x + rect.width - 55))
+            {
+                input.value = "";
+                $('#autoComplete').keyup();
+            }
+        }
     }
 //matches the buttons pressed and looks the matches for everything
 function buttonSearching(buttonText)

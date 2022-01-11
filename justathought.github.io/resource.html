@@ -169,32 +169,33 @@
                     {
                         document.getElementById("autoComplete_result_"+a).setAttribute("class",document.getElementById("autoComplete_result_"+a).textContent);
                     }
-                      $('#contentWrapper').css('top', 0);
-                      $('#contentWrapper').css('margin-bottom', 10); 
+                     $('#contentWrapper').css('top', 0);
+                     $('#contentWrapper').css('margin-bottom', 10); 
                      for (j = 0; j < data.matches.length; j++) { 
-                             for (i = 0; i < content.length; i++) {     
-                               if (titleContent[i].textContent === document.getElementById("autoComplete_result_"+j).className) {
-                                 content[i].style.visibility = "visible";
-                                 content[i].style.display = "block";
-                                 i = content.length;
-                              }
-                              else if(document.getElementById("autoComplete_result_"+j).className===content[i].getAttribute("data-tag"))
-                              {
-                                 content[i].style.visibility = "visible";
-                                 content[i].style.display = "block";
-                              }
-                          }
-                      }
-                      
-                      paragraphCheck(data.matches,data.results);
-                     message.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
-                     list.prepend(message);
+                        for (i = 0; i < content.length; i++) {     
+                           if (titleContent[i].textContent === document.getElementById("autoComplete_result_"+j).className) {
+                              content[i].style.visibility = "visible";
+                              content[i].style.display = "block";
+                              i = content.length;
+                           }
+                           else if(document.getElementById("autoComplete_result_"+j).className===content[i].getAttribute("data-tag"))
+                           {
+                              content[i].style.visibility = "visible";
+                              content[i].style.display = "block";
+                           }
+                        }
+                     }              
+               
                   } catch (e) {
                       console.log(a);
                   }
+               console.log(data.matches.length);
+               console.log(data.results.length);
+               paragraphCheck(data.matches,data.results);
+               message.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
+               list.prepend(message); 
                   if (!data.results.length) {
                       // Create "No Results" message element
-                      const message = document.createElement("div");
                       // Add class to the created element
                       message.setAttribute("class", "no_result");
                       // Add message text content
@@ -330,7 +331,7 @@
                         <h1>The Resource Hub</h1>
                         <p>Stay on track of your mental wellbeing with these helpful resource guides.</p>
                         <div class="autoComplete_wrapper">
-                            <input id="autoComplete" class="magnifyingGlass" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="2048" tabindex="1" onkeyup="buttonSearching(this.value); inputZero(this.value.length)" onclick="showCoords(event,this)">
+                            <input id="autoComplete" class="magnifyingGlass" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="2048" tabindex="1" onkeyup="buttonSearching(this.value); inputZero(this.value.length)" onclick="clearAutoComplete(event,this)">
                         </div>
                         </div>
                      </div>
