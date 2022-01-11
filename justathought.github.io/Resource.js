@@ -8,14 +8,14 @@ function thing(){
         $(".nav-container").css('opacity', 1);
         $(".contentAndHeaderContainer").css('opacity',0.1);
         document.getElementsByClassName("contentAndHeaderContainer").style.transition="opacity 0.5s";
-        $("#container").css('opacity',0.1);
+        $(".cardResources").css('opacity',0.1);
         $(".container").css('opacity',0.1);
         $("footer").css('opacity',0.1);
     }
     else
     {
         $(".contentAndHeaderContainer").css('opacity',1);
-        $(".cardContainer").css('opacity',1);
+        $(".cardResources").css('opacity',1);
         $(".container").css('opacity',1);
         $("footer").css('opacity',1);
     }
@@ -24,9 +24,9 @@ function thing(){
 //adds events to autocomplete searchbar
 function resourceOnload(){
     input = document.getElementById("autoComplete");
-    content = document.querySelectorAll('div.content');
-    contentParagraph = document.querySelectorAll('div.content > p');
-    contentTitle = document.querySelectorAll('div.content > h4');
+    content = document.querySelectorAll('div.cardResources');
+    contentParagraph = document.querySelectorAll('div.cardResources > p');
+    contentTitle = document.querySelectorAll('div.cardResources > h4');
     buttonWrapperButtons = document.querySelectorAll('#buttonWrapper > button');
     input.addEventListener('keyup', (event) => {
         const keyName = event.key;
@@ -144,8 +144,8 @@ function inputZero(valueLength)
     if(valueLength === 0)
     {
         input.setAttribute('class', 'magnifyingGlass');
-        $('.content').css('visibility', 'visible');
-        $('.content').css('display','block');
+        $('.cardResources').css('visibility', 'visible');
+        $('.cardResources').css('display','block');
     }
     else
     {

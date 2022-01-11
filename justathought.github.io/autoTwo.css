@@ -77,7 +77,6 @@
     color: var(--searchWordColor);
     transition: var(  --transition-1);
   }
-  
   .selection::selection {
     color: #64ceaa;
   }
@@ -86,6 +85,10 @@
     .selection {
       margin-top: 15vh;
     }
+  }
+  button
+  {
+    box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
   }
   #page_wrapper
   {
@@ -102,27 +105,21 @@
   #buttonWrapper button
   {
     margin: 0px 3px !important;
-    box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
     color: #c9467f;
     background-color: white;
   }
+  
   .contentWrapper
   {
     position: relative;
     display:grid;
     grid-template-columns: 33% 33% 33%;
     margin:auto;
+    padding-top:0px;
     left: 0%;
     transition: ease all 0.3s;
   }
-  .card img
-  {
-    justify-content: center;
-    width : 100%;
-    height:auto;
-    margin-bottom: 10%;
-  }
-  .card
+  .cardResources
   {
     max-width:290px;
     display:block;
@@ -135,27 +132,58 @@
     margin-right: auto;
     margin-bottom: 32px;
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
-
   }
-  .card p
+  .cardResources img
+  {
+    justify-content: center;
+    width : 100%;
+    height:auto;
+    margin-bottom: 5%;
+  }
+    /* Container needed to position the button. Adjust the width as needed */
+.card__ImageContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom:15px;
+}
+.column h1 p
+{
+  font-family: 'Asap';
+}
+.column h1
+{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 42px;
+  color: #4E4B6D;
+}
+.cardResources h4 
+{
+  color:#4E4B6D;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+
+}
+  .cardResources p
   {
     padding-bottom: 12%;
     text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     font-family: 'Montserrat';
-    margin-bottom: 18px;
+    margin-bottom: 30px;
   }
-  .card button
+  .cardResources button
   {
     border-radius: 75px;
-    color: white ;
-    width: auto;
+    color: white;
     cursor: pointer;
     border-style: none;
     z-index:1;
+    box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
   }
-  .card .card__Button
+  .cardResources .card__Button
   {
     position:absolute;
     bottom:0;
@@ -190,15 +218,13 @@
     position:relative;
     z-index:10;
   }
-  #header__squigglyHeader
+  .header__squigglyHeader
   {
   position: relative;
   top: 100%;
   left: 0%;
   transform: translate(0%, -70%);
   -ms-transform: translate(0%, -70%);
-  width: auto;
-  height:auto;
   min-height: 45px;
   margin-bottom:min(57.141px);
   max-height: 146px;
@@ -206,7 +232,7 @@
   z-index: 1;
   width:100%;
   }
-  #header__squigglyHeader img
+  .header__squigglyHeader img
   {
     position:relative;
     z-index: 1;
@@ -236,7 +262,7 @@
   .noGlass
   {
     background: url(uploads/ResourceImage/xButton-removebg-preview.png);
-    background-size: 40px;
+    background-size: 55px;
   }
 .column
 {
@@ -246,7 +272,6 @@
   position: relative;
   z-index:1;
   text-align:center;
-  /* padding-top: 10%; */
 }
 #header__imageLeft
 {
@@ -260,14 +285,16 @@ makes it look quite ugly*/
   border: 2px solid #4E4B6D !important;
   width:50px !important;
   height: 50px;
-  background-color: white;
   background-size: 55%;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: default;
-  outline: 1;
   pointer-events: none;
-  
+  position: absolute;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:white;
 }
 
 /*autoComplete stuff here*/
@@ -305,13 +332,6 @@ makes it look quite ugly*/
   z-index: 600;
   outline: none;
 }
-.nav-resources a
-{
-    color: #606eb0;
-    border-bottom: 3px solid #606eb0;
-    cursor:default;
-    pointer-events: none;
-}
 .autoComplete_wrapper > ul > li {
   padding: 10px 20px;
   list-style: none;
@@ -326,6 +346,13 @@ makes it look quite ugly*/
   text-overflow: ellipsis;
   transition: all 0.2s ease;
   z-index: 600;
+}
+.nav-resources a
+{
+    color: #606eb0;
+    border-bottom: 3px solid #606eb0;
+    cursor:default;
+    pointer-events: none;
 }
 
 .autoComplete_wrapper > ul > li::selection {
@@ -358,47 +385,6 @@ makes it look quite ugly*/
     width: 18rem;
   }
 }
-/* Container needed to position the button. Adjust the width as needed */
-.card__ImageContainer {
-  position: relative;
-  width: 100%;
-}
-
-/* Make the image responsive */
-.card__ImageContainer img {
-  width: 100%;
-  height: auto;
-}
-
-/* Style the button and place it in the middle of the container/image */
-.card__ImageContainer .small {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  font-size: 16px;
-  cursor: default;
-}
-.column h1 p
-{
-  font-family: 'Asap';
-}
-.column h1
-{
-  font-weight: bold;
-  font-style: italic;
-  font-size: 42px;
-  color: #4E4B6D;
-}
-.card h4 
-{
-  color:#4E4B6D;
-  text-align: center;
-  padding-left: 10%;
-  padding-right: 10%;
-
-}
 @media screen and (max-width: 1510px) 
 {
   #header
@@ -406,17 +392,9 @@ makes it look quite ugly*/
     grid-template-columns: 30% 40% 30%;
   }
 }
-@media screen and (max-width: 1200px)
-{
-  #header
-  {
-    grid-template-columns: 30% 40% 30%;
-  }
-
-}
 
 @media screen and (max-width: 991px){
-  .card
+  .cardResources
   {
     display:block;
     text-align: center;
@@ -445,7 +423,7 @@ makes it look quite ugly*/
     padding-left: 5%;
     padding-right:5%;
   }
-  .card h1
+  .card__Title
   {
     margin-top: 20%;
   }
@@ -453,24 +431,21 @@ makes it look quite ugly*/
   {
     bottom:0;
   }
-  #header__squigglyHeader
+  .header__squigglyHeader
   {
     position: relative;
     top: 100%;
     left: 0%;
     transform: translate(0%, 15%);
     -ms-transform: translate(0%, 15%);
-    width: auto;
-    height: auto;
     margin:0%;
     padding:0%;
-  }ƒ
+  }
   #headerContainer
   {
     position:relative;
     margin:auto;
   }
-  
   @media screen and (max-width: 720px)
   {
     #headerContainer #container
@@ -481,7 +456,6 @@ makes it look quite ugly*/
     .column #header__imageLeft
     {
       padding:0px;
-
     }
   .contentWrapper
   {
@@ -491,23 +465,20 @@ makes it look quite ugly*/
     padding-left:auto;
     padding-right:auto;
   }
-
   .card__ImageContainer img
   {
     display: none;
     visibility: hidden !important;
   } 
-
   .card__ImageContainer
   {
     margin-bottom: 12%;
   }
-
-  .card h1
+  .card__Title
   {
     margin-top: 20%;
   }
-  .card
+  .cardResources
   {
     width:100%;
     min-width:100px;
