@@ -111,10 +111,11 @@
       resourceOnload();
       var content = document.querySelectorAll("div.cardResources");
       var titleContent = document.querySelectorAll("div.cardResources h4");
+      var descriptions = document.querySelectorAll("div.cardResources p");
       var clickedData;
       var titleContent;
       var JSONArray;
-      function manufactureArray(props, content, titleContent) {
+      function manufactureArray(props, content, titleContent, description) {
           var arr = [];
           var obj;
           // Loop for the number of objects you want to push to the array
@@ -127,8 +128,12 @@
                       obj[props[j]] = titleContent[i].textContent;
                   }
                   //2nd entry is the data tags
-                  else {
+                  if(j == 1) {
                       obj[props[j]] = content[i].getAttribute('data-tag');
+                  }
+                  if(j==2)
+                  {
+                     obj[props[j]] = description[i].textContent;
                   }
               }
       
@@ -138,13 +143,13 @@
             return JSON.parse(JSONarray);
       }
       
-   const resourceArray = manufactureArray(['Title', 'DataTag'], content, titleContent);
+   const resourceArray = manufactureArray(['Title', 'DataTag', 'Description'], content, titleContent, descriptions);
    const autoCompleteJS = new autoComplete({
           selector: "#autoComplete",
           placeHolder: "Search...",
           data: {
-             src: resourceArray,
-              keys: ["Title", "DataTag"],
+            src: resourceArray,
+              keys: ["Title", "Description", "DataTag"],
               cache: true,
               filter: (list) => {
                   // Filter duplicates
@@ -167,10 +172,41 @@
                   try {
                     for(a = 0; a < data.results.length; a++)
                     {
-                        document.getElementById("autoComplete_result_"+a).setAttribute("class",document.getElementById("autoComplete_result_"+a).textContent);
+                       //if key of data match that was used to match it is a description
+                        if(data.results[a].key == 'Description')
+                        {
+                           //assign the value title to the autoComplete result
+                           //document.getElementById("autoComplete_result_"+a).innertext=data.results[a].value.Title;
+                           //if its not the first value
+                           if(a!=0)
+                           {
+                              console.log(data.results);
+                              console.log(data.matches);
+                              //if the title of the current one is the same as the previous one
+                              //remove the current one from the array
+                              if(data.results[a].Title==data.results[a-1].Title)
+                              {       
+
+                                 arrayResult = arrayRemove(data.matches, data.matches[a].Description);
+                                 document.getElementById("autoComplete_result_"+a).style.display = 'none';
+                                 document.getElementById("autoComplete_result_"+a).style.visibility = 'hidden';
+                                 // console.log(data.results[a].value);
+                                 // console.log(data.matches.length);
+                                 //data.matches = arrayResult;
+                                 //a--;
+                              }
+                              else
+                              { 
+                                 document.getElementById("autoComplete_result_"+a).setAttribute("class",document.getElementById("autoComplete_result_"+a).textContent);
+                              }
+                           }
+                        }
+                       
+                        //console.log(data);
                     }
                      $('#contentWrapper').css('top', 0);
                      $('#contentWrapper').css('margin-bottom', 10); 
+                     console.log(data.results.length);
                      for (j = 0; j < data.matches.length; j++) { 
                         for (i = 0; i < content.length; i++) {     
                            if (titleContent[i].textContent === document.getElementById("autoComplete_result_"+j).className) {
@@ -187,11 +223,10 @@
                      }              
                
                   } catch (e) {
-                      console.log(a);
+                      console.log(e);
                   }
-               console.log(data.matches.length);
-               console.log(data.results.length);
-               paragraphCheck(data.matches,data.results);
+               
+               // paragraphCheck(data.matches,data.results);
                message.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
                list.prepend(message); 
                   if (!data.results.length) {
