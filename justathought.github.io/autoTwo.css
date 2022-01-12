@@ -10,12 +10,10 @@
     font-size: 1rem;
     font-family: "PT Sans", sans-serif;
   }
-  
   body {
     margin: 0;
     padding: 0;
   }
-  
   .header {
     text-align: center;
     user-select: none;
@@ -254,6 +252,7 @@
      position:relative;
      z-index:600;
      margin-bottom: 0px;
+     padding-right:50px;
   }
   .magnifyingGlass
   {
@@ -304,9 +303,6 @@ makes it look quite ugly*/
   z-index: 600;
 }
 .autoComplete_wrapper > input {
-  width: 370px;
-  height: 40px;
-  padding-left: 10px;
   font-size: 1rem;
   color: rgb(116, 116, 116);
   border-radius: 4px;
@@ -329,7 +325,6 @@ makes it look quite ugly*/
   border-radius: 4px;
   background-color: #fff;
   border: 1px solid rgba(33, 33, 33, 0.1);
-  z-index: 600;
   outline: none;
 }
 .autoComplete_wrapper > ul > li {
@@ -359,27 +354,22 @@ makes it look quite ugly*/
   color: rgba(#ffffff, 0);
   background-color: rgba(#ffffff, 0);
 }
-
 .autoComplete_wrapper > ul > li:hover {
   cursor: pointer;
   background-color: rgba(123, 123, 123, 0.1);
 }
-
 .autoComplete_wrapper > ul > li mark {
   background-color: transparent;
   color: var(--buttonBG);
   font-weight: bold;
 }
-
 .autoComplete_wrapper > ul > li mark::selection {
   color: rgba(#ffffff, 0);
   background-color: rgba(#ffffff, 0);
 }
-
 .autoComplete_wrapper > ul > li[aria-selected="true"] {
   background-color: rgba(123, 123, 123, 0.1);
 }
-
 @media only screen and (max-width: 600px) {
   .autoComplete_wrapper > input {
     width: 18rem;

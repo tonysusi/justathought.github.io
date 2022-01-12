@@ -35,82 +35,81 @@ function resourceOnload(){
             input.blur();
         }
       });
-    input.addEventListener('keyup', paragraphCheck);
     buttonsPressed = false;
 }
 
 //checks the paragraphs of the cards
-function paragraphCheck(matchArrayList, resultsArrayList)
-{
-    var searchContainer = document.getElementById("autoComplete_list_1");
-    var searchList = document.querySelectorAll('#autoComplete_list_1 > li');
-    var searchLength = searchList.length;
-    var a = 0;
-    if (input.value !== "" && input.value.length >= 3)
-    {
-        for(i = 0; i < (contentParagraph.length); i++)
-        {
-            if (contentParagraph[i].textContent.toLowerCase().includes(input.value.toLowerCase()))
-            {
-                    var duplicateCheck = false;
-                    var x = document.createElement("li");
-                    var t = document.createTextNode(contentTitle[i].textContent);
-                    x.setAttribute("role", "option");
-                    x.appendChild(t);
-                    content[i].style.visibility = "visible";
-                    content[i].style.display = "block";
-                    try
-                    {
-                    if(document.body.contains(document.querySelector('.no_result')))
-                        {
-                            document.querySelector('.no_result').style.visibility = "hidden";
-                            document.querySelector('.no_result').style.display = "none";
-                        }
-                    }
-                    catch(e)
-                    {
-                        console.log(e);
-                    }
-                    //check if there is a duplicate in searchList            
-                    for(j = 0; j < searchList.length; j++)
-                    {
-                        if(searchList[j].textContent === contentTitle[i].textContent)
-                        {
-                            duplicateCheck = true;
-                        }
-                    }
-                    //if the duplicate check isnt activated      
-                    if(!duplicateCheck)
-                    { 
-                        //pushes the list into the result and list array so the library can count the matches in the paragraph check
-                        matchArrayList.push(contentTitle[i].textContent);
-                        resultsArrayList.push(contentTitle[i].textContent);
-                        //if the LI in question is clicked, then the following div will show up
-                        x.onclick = function(){
-                        var justify = this.textContent;
-                        input.value = justify;
-                        for(i = 0; i < content.length; i++)
-                        {
-                            if(contentTitle[i].textContent === justify)
-                            {
-                                content[i].style.visibility = "visible";
-                                content[i].style.display = "block";
-                            }
-                            else
-                            {
-                                content[i].style.visibility = "hidden";
-                                content[i].style.display = "none";
-                            }
-                        }
-                    }
-                        x.setAttribute("id", "autoComplete_result_"+(a + searchLength));
-                        a++;
-                        searchContainer.appendChild(x);
-                    }
-            }
-        }
-    }
-}
+// function paragraphCheck(matchArrayList, resultsArrayList)
+// {
+//     var searchContainer = document.getElementById("autoComplete_list_1");
+//     var searchList = document.querySelectorAll('#autoComplete_list_1 > li');
+//     var searchLength = searchList.length;
+//     var a = 0;
+//     if (input.value !== "" && input.value.length >= 3)
+//     {
+//         for(i = 0; i < (contentParagraph.length); i++)
+//         {
+//             if (contentParagraph[i].textContent.toLowerCase().includes(input.value.toLowerCase()))
+//             {
+//                     var duplicateCheck = false;
+//                     var x = document.createElement("li");
+//                     var t = document.createTextNode(contentTitle[i].textContent);
+//                     x.setAttribute("role", "option");
+//                     x.appendChild(t);
+//                     content[i].style.visibility = "visible";
+//                     content[i].style.display = "block";
+//                     try
+//                     {
+//                     if(document.body.contains(document.querySelector('.no_result')))
+//                         {
+//                             document.querySelector('.no_result').style.visibility = "hidden";
+//                             document.querySelector('.no_result').style.display = "none";
+//                         }
+//                     }
+//                     catch(e)
+//                     {
+//                         console.log(e);
+//                     }
+//                     //check if there is a duplicate in searchList            
+//                     for(j = 0; j < searchList.length; j++)
+//                     {
+//                         if(searchList[j].textContent === contentTitle[i].textContent)
+//                         {
+//                             duplicateCheck = true;
+//                         }
+//                     }
+//                     //if the duplicate check isnt activated      
+//                     if(!duplicateCheck)
+//                     { 
+//                         //pushes the list into the result and list array so the library can count the matches in the paragraph check
+//                         matchArrayList.push(contentTitle[i].textContent);
+//                         resultsArrayList.push(contentTitle[i].textContent);
+//                         //if the LI in question is clicked, then the following div will show up
+//                         x.onclick = function(){
+//                         var justify = this.textContent;
+//                         input.value = justify;
+//                         for(i = 0; i < content.length; i++)
+//                         {
+//                             if(contentTitle[i].textContent === justify)
+//                             {
+//                                 content[i].style.visibility = "visible";
+//                                 content[i].style.display = "block";
+//                             }
+//                             else
+//                             {
+//                                 content[i].style.visibility = "hidden";
+//                                 content[i].style.display = "none";
+//                             }
+//                         }
+//                     }
+//                         x.setAttribute("id", "autoComplete_result_"+(a + searchLength));
+//                         a++;
+//                         searchContainer.appendChild(x);
+//                     }
+//             }
+//         }
+//     }
+// }
 
 //input.addEventListener('keyup', buttonSearching(input.value));
 //starts when the buttons are pressed
@@ -140,7 +139,6 @@ function buttonPressed(buttonValue)
 //if it is, then show every content
 function inputZero(valueLength)
 {
-    console.log(valueLength);
     if(valueLength === 0)
     {
         input.setAttribute('class', 'magnifyingGlass');
@@ -150,25 +148,38 @@ function inputZero(valueLength)
     else
     {
         input.setAttribute('class', 'noGlass');
-        
     }
 }
-    function showCoords(event, eleTest)
+//deletes the value of autoComplete bar
+    function clearAutoComplete(event, eleTest)
     {
         var rect = eleTest.getBoundingClientRect();
         var x = event.clientX;
         var y = event.clientY;
-        console.log(x + " ," + y + " ," + rect.x + ", " + rect.y + " ," + rect.width);
+        if(input.className==='noGlass')
+        {
+            // &&(y<rect.y + rect.height && y < rect.y+rect.height-55)
+            if(x < (rect.x + rect.width) && x > (rect.x + rect.width - 55))
+            {
+                input.value = "";
+                $('#autoComplete').keyup();
+            }
+        }
     }
+function arrayRemove(arr,value)
+{
+    return arr.filter(function(ele)
+    {
+        return ele!=value;
+    });
+}
 //matches the buttons pressed and looks the matches for everything
 function buttonSearching(buttonText)
 {
     buttonsPressed = false;
     var a=0;
-    console.log(buttonText);
     for(j = 0; j < buttonWrapperButtons.length; j++)
     {
-        console.log(buttonWrapperButtons[j].textContent === buttonText);
         if(buttonWrapperButtons[j].textContent.toLowerCase() === buttonText.toLowerCase())
         {
             buttonWrapperButtons[j].setAttribute('buttonStatus', 'pressed');
