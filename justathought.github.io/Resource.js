@@ -150,18 +150,19 @@ function inputZero(valueLength)
         input.setAttribute('class', 'noGlass');
     }
 }
-//deletes the value of autoComplete bar
+    //deletes the value of autoComplete bar
     function clearAutoComplete(event, eleTest)
     {
         var rect = eleTest.getBoundingClientRect();
         var x = event.clientX;
-        var y = event.clientY;
         if(input.className==='noGlass')
         {
             // &&(y<rect.y + rect.height && y < rect.y+rect.height-55)
             if(x < (rect.x + rect.width) && x > (rect.x + rect.width - 55))
             {
                 input.value = "";
+                $('ul').empty();
+                $('ul').css("visibility","hidden");
                 $('#autoComplete').keyup();
             }
         }
