@@ -168,6 +168,7 @@
             //       $('.cardResources').css('visibility','hidden');
             //       $('.cardResources').css('display', 'none');
                var rex = /\S/;
+               //$('#autoComplete_list_1 li').bind('click',console.log(this));
                for(matchesIndex = 0; matchesIndex<data.matches.length; matchesIndex++)
                {
                    if(matchesIndex!=0 && data.matches[matchesIndex].key=="Description")
@@ -182,12 +183,11 @@
                             data.results = data.results.filter(rex.test.bind(rex));
                             //data.results = data.results.filter(rex.test.bind(rex));
                             data.matches = data.matches.filter(rex.test.bind(rex));
-                            console.log(data.results);
+                            
                             if(data.results.length <= 5)
                             {
                                 //data.results[a].match = data.results[a].value.Title;
                                 data.results.push(data.matches[matchesIndex]);
-                                
                             }
                             else 
                             {
@@ -215,13 +215,19 @@
                         data.results[resultsIndex].match = data.results[resultsIndex].value.Title;
                     }
                 }
-                $('ul').css("visibility", "visible");
-                $('ul').empty();
+                console.log(list);
+                $('#autoComplete_list_1').css("visibility", "visible");
+                $('#autoComplete_list_1 > li').off("click");
+                $('#autoComplete_list_1').empty();
                 for(i = 0; i < data.results.length; i++)
                 {
                     var x = document.createElement("li");
                     x.innerHTML=data.results[i].match;
-                    $('ul').append(x);
+                    x.onclick=function(){
+                        $('#autoComplete').value = this.textContent;
+                    };
+                    x.setAttribute('onclick','listClicky(this);');
+                    $('#autoComplete_list_1').append(x);
                     
                 }
                 $('.cardResources').css("display","none");
@@ -238,6 +244,11 @@
                         resultIndex++;
                     }
                     contentIndex++;
+                }
+                while(data.results.length > 5)
+                {
+                 
+                  data.results.pop();
                 }
                 }
                 catch

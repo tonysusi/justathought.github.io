@@ -37,7 +37,13 @@ function resourceOnload(){
       });
     buttonsPressed = false;
 }
-
+function listClicky(thing)
+{
+    console.log(thing.textContent);
+    document.getElementById("autoComplete").innerHTML = thing.textContent;
+    console.log(document.getElementById("autoComplete").textContent);
+    $('#autoComplete').keyup();
+}
 //checks the paragraphs of the cards
 // function paragraphCheck(matchArrayList, resultsArrayList)
 // {
@@ -161,8 +167,8 @@ function inputZero(valueLength)
             if(x < (rect.x + rect.width) && x > (rect.x + rect.width - 55))
             {
                 input.value = "";
-                $('ul').empty();
-                $('ul').css("visibility","hidden");
+                $('#autoComplete_list_1').empty();
+                $('#autoComplete_list_1').css("visibility","hidden");
                 $('#autoComplete').keyup();
             }
         }
