@@ -107,7 +107,7 @@
     background-color: white;
   }
   
-  .contentWrapper
+  .resource-grid
   {
     position: relative;
     display:grid;
@@ -117,7 +117,7 @@
     left: 0%;
     transition: ease all 0.3s;
   }
-  .cardResources
+  .card-resources
   {
     max-width:290px;
     display:block;
@@ -131,7 +131,7 @@
     margin-bottom: 32px;
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
   }
-  .cardResources img
+  .card-resources img
   {
     justify-content: center;
     width : 100%;
@@ -139,7 +139,7 @@
     margin-bottom: 5%;
   }
     /* Container needed to position the button. Adjust the width as needed */
-.card__ImageContainer {
+.card-resources_ImageContainer {
   position: relative;
   width: 100%;
   margin-bottom:15px;
@@ -155,7 +155,7 @@
   font-size: 42px;
   color: #4E4B6D;
 }
-.cardResources h4 
+.card-resources h4 
 {
   color:#4E4B6D;
   text-align: center;
@@ -163,7 +163,7 @@
   padding-right: 10%;
 
 }
-  .cardResources p
+  .card-resources p
   {
     padding-bottom: 12%;
     text-align: center;
@@ -172,7 +172,7 @@
     font-family: 'Montserrat';
     margin-bottom: 30px;
   }
-  .cardResources button
+  .card-resources button
   {
     border-radius: 75px;
     color: white;
@@ -181,7 +181,7 @@
     z-index:1;
     box-shadow: 0 8px 6px -6px rgb(0 0 0 / 15%);
   }
-  .cardResources .card__Button
+  .card-resources .card-resources_Button
   {
     position:absolute;
     bottom:0;
@@ -405,7 +405,7 @@ makes it look quite ugly*/
     grid-template-columns: 100%;
     padding-top:5%;
   }
-  .contentWrapper
+  .resource-grid
   {
     /* transform: translate(0%, 0%); */
     grid-template-columns: 50% 50%;
@@ -413,11 +413,11 @@ makes it look quite ugly*/
     padding-left: 5%;
     padding-right:5%;
   }
-  .card__Title
+  .card-resources_Title
   {
     margin-top: 20%;
   }
-  .card__Button
+  .card-resources_Button
   {
     bottom:0;
   }
@@ -447,7 +447,7 @@ makes it look quite ugly*/
     {
       padding:0px;
     }
-  .contentWrapper
+  .resource-grid
   {
     grid-template-columns: 100%;
     position: relative;
@@ -455,16 +455,16 @@ makes it look quite ugly*/
     padding-left:auto;
     padding-right:auto;
   }
-  .card__ImageContainer img
+  .card-resources_ImageContainer img
   {
     display: none;
     visibility: hidden !important;
   } 
-  .card__ImageContainer
+  .card-resources_ImageContainer
   {
     margin-bottom: 12%;
   }
-  .card__Title
+  .card-resources_Title
   {
     margin-top: 20%;
   }
