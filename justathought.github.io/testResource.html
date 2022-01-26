@@ -165,22 +165,33 @@
                const message = document.createElement("div");
                // Append message element to the results list
                var rex = /\S/;
-               data.results=[];
                for(matchesIndex = 0; matchesIndex<data.matches.length; matchesIndex++)
                {
-                  if(matchesIndex!=0 && data.matches[matchesIndex].key=="Description")
-                  {                         
-                     if(data.matches[matchesIndex].value.Title == data.matches[matchesIndex-1].value.Title)
-                     {
-                        delete data.matches[matchesIndex];
-                        data.matches = data.matches.filter(rex.test.bind(rex)); 
-                        matchesIndex--;
-                     }
-                  }
-               }
-               for(resultIndex = 0; resultIndex < 5; resultIndex++)
-               {
-                  data.results.push(data.matches[resultIndex]);
+                   if(matchesIndex!=0 && data.matches[matchesIndex].key=="Description")
+                   {                         
+                        if(data.matches[matchesIndex].value.Title == data.matches[matchesIndex-1].value.Title)
+                        {
+                            //data.results.splice(data.matches[a],1);
+                            delete data.matches[matchesIndex];
+                            delete data.results[matchesIndex];
+                            //delete data.results[a];
+                            //data.results.splice(data.matches[a],1);
+                            data.results = data.results.filter(rex.test.bind(rex));
+                            //data.results = data.results.filter(rex.test.bind(rex));
+                            data.matches = data.matches.filter(rex.test.bind(rex));
+                            
+                            if(data.results.length <= 5)
+                            {
+                                //data.results[a].match = data.results[a].value.Title;
+                                data.results.push(data.matches[matchesIndex]);
+                            }
+                            else 
+                            {
+                                data.results.pop();
+                            }
+                            matchesIndex--;
+                        }
+                   }
                }
                var uniq = data.results.reduce(function(a,b){
                     if (a.indexOf(b) < 0 ) a.push(b);
@@ -210,7 +221,6 @@
                         $('#autoComplete').value = this.textContent;
                     };
                     x.setAttribute('onclick','listClicky(this);');
-                    x.setAttribute('class', 'results');
                     $('#autoComplete_list_1').append(x);
                 }
                 $('.card-resources').css("display","none");
@@ -220,26 +230,24 @@
                 {
                 for(contentIndex = 0; contentIndex<content.length;)
                 {
-                  if(data.results[resultIndex].key == 'DataTag')
-                  {
-                     resultIndex++;
-                  }
-                  if(titleContent[contentIndex].textContent == data.results[resultIndex].value.Title)
-                  {
-                     content[contentIndex].style.display="block";
-                     content[contentIndex].style.visibility="visible";
-                     resultIndex++;
-                  }
-                  contentIndex++;
+                    if(titleContent[contentIndex].textContent == data.results[resultIndex].value.Title)
+                    {
+                        content[contentIndex].style.display="block";
+                        content[contentIndex].style.visibility="visible";
+                        resultIndex++;
+                    }
+                    contentIndex++;
                 }
+                console.log(document.getElementById("autoComplete").value);
                 while(data.results.length > 5)
                 {
+                 
                   data.results.pop();
                 }
                 }
                 catch
                 {
-                  
+
                 }
                 message.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
                 list.prepend(message); 
@@ -268,10 +276,12 @@
                   selection: (event) => {
                      var auto = document.getElementById("autoComplete");
                      const feedback = event.detail;
+                     console.log(feedback);
                       //alert(feedback.selection.value[feedback.selection.key]);
                       autoCompleteJS.input.blur();
                       // Prepare User's Selected Value
                      const selection = feedback.selection.value;
+                     console.log(selection);
                       // Render selected choice to selection div
                       auto.innerHTML = selection[feedback.selection.key];
                       // Replace Input value with the selected value
@@ -317,7 +327,7 @@
       <meta property="og:url" content="https://www.justathought.co.nz/Resource">
       <meta property="twitter:url" content="https://www.justathought.co.nz/Resource">
       <link rel="canonical" href="https://www.justathought.co.nz/Resource"/>
-      <link rel = "stylesheet" href = "/assets/styles/autoTwo.css">
+      <link rel = "stylesheet" href = "autoTwo.css">
    </head>
    <body>
       <div class="wrapper resources" id="page_wrapper">
@@ -614,7 +624,7 @@
          	}
          }
       </script>
-      <script src = "assets/scripts/Resource.js"></script>
+
    </body>
 </html>
 </body>
