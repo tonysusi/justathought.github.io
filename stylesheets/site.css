@@ -1,0 +1,47 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #04092E;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0 0 1.25em;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+section {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+section .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+section .container img {
+  width: 520px;
+  height: auto;
+}
+
+/*# sourceMappingURL=site.css.map*/
