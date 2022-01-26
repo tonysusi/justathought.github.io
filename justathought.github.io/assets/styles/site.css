@@ -1488,9 +1488,9 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/fonts/montserrat-v14-latin-ext_latin-regular.eot");
+  src: url("./assets/fonts/montserrat-v14-latin-ext_latin-regular.eot");
   /* IE9 Compat Modes */
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/assets/fonts/montserrat-v14-latin-ext_latin-regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-regular.woff2") format("woff2"), url("/assets/fonts/montserrat-v14-latin-ext_latin-regular.woff") format("woff"), url("/assets/fonts/montserrat-v14-latin-ext_latin-regular.ttf") format("truetype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-regular.svg#Montserrat") format("svg");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("./assets/fonts/montserrat-v14-latin-ext_latin-regular.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-regular.woff2") format("woff2"), url("./assets/fonts/montserrat-v14-latin-ext_latin-regular.woff") format("woff"), url("./assets/fonts/montserrat-v14-latin-ext_latin-regular.ttf") format("truetype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-regular.svg#Montserrat") format("svg");
   /* Legacy iOS */
 }
 /* montserrat-500 - latin-ext_latin */
@@ -1498,9 +1498,9 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  src: url("/assets/fonts/montserrat-v14-latin-ext_latin-500.eot");
+  src: url("./assets/fonts/montserrat-v14-latin-ext_latin-500.eot");
   /* IE9 Compat Modes */
-  src: local("Montserrat Medium"), local("Montserrat-Medium"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500.woff2") format("woff2"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500.woff") format("woff"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500.ttf") format("truetype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500.svg#Montserrat") format("svg");
+  src: local("Montserrat Medium"), local("Montserrat-Medium"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500.woff2") format("woff2"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500.woff") format("woff"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500.ttf") format("truetype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500.svg#Montserrat") format("svg");
   /* Legacy iOS */
 }
 /* montserrat-500italic - latin-ext_latin */
@@ -1508,9 +1508,9 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 500;
-  src: url("/assets/fonts/montserrat-v14-latin-ext_latin-500italic.eot");
+  src: url("./assets/fonts/montserrat-v14-latin-ext_latin-500italic.eot");
   /* IE9 Compat Modes */
-  src: local("Montserrat Medium Italic"), local("Montserrat-MediumItalic"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500italic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500italic.woff2") format("woff2"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500italic.woff") format("woff"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500italic.ttf") format("truetype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-500italic.svg#Montserrat") format("svg");
+  src: local("Montserrat Medium Italic"), local("Montserrat-MediumItalic"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500italic.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500italic.woff2") format("woff2"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500italic.woff") format("woff"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500italic.ttf") format("truetype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-500italic.svg#Montserrat") format("svg");
   /* Legacy iOS */
 }
 /* montserrat-600 - latin-ext_latin */
@@ -1518,9 +1518,9 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url("/assets/fonts/montserrat-v14-latin-ext_latin-600.eot");
+  src: url("./assets/fonts/montserrat-v14-latin-ext_latin-600.eot");
   /* IE9 Compat Modes */
-  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600.woff2") format("woff2"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600.woff") format("woff"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600.ttf") format("truetype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600.svg#Montserrat") format("svg");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600.woff2") format("woff2"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600.woff") format("woff"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600.ttf") format("truetype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600.svg#Montserrat") format("svg");
   /* Legacy iOS */
 }
 /* montserrat-600italic - latin-ext_latin */
@@ -1528,9 +1528,9 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 600;
-  src: url("/assets/fonts/montserrat-v14-latin-ext_latin-600italic.eot");
+  src: url("./assets/fonts/montserrat-v14-latin-ext_latin-600italic.eot");
   /* IE9 Compat Modes */
-  src: local("Montserrat SemiBold Italic"), local("Montserrat-SemiBoldItalic"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600italic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600italic.woff2") format("woff2"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600italic.woff") format("woff"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600italic.ttf") format("truetype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-600italic.svg#Montserrat") format("svg");
+  src: local("Montserrat SemiBold Italic"), local("Montserrat-SemiBoldItalic"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600italic.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600italic.woff2") format("woff2"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600italic.woff") format("woff"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600italic.ttf") format("truetype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-600italic.svg#Montserrat") format("svg");
   /* Legacy iOS */
 }
 /* montserrat-700 - latin-ext_latin */
@@ -1538,9 +1538,9 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: url("/assets/fonts/montserrat-v14-latin-ext_latin-700.eot");
+  src: url("./assets/fonts/montserrat-v14-latin-ext_latin-700.eot");
   /* IE9 Compat Modes */
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700.woff2") format("woff2"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700.woff") format("woff"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700.ttf") format("truetype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700.svg#Montserrat") format("svg");
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700.woff2") format("woff2"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700.woff") format("woff"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700.ttf") format("truetype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700.svg#Montserrat") format("svg");
   /* Legacy iOS */
 }
 /* montserrat-700italic - latin-ext_latin */
@@ -1548,9 +1548,9 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 700;
-  src: url("/assets/fonts/montserrat-v14-latin-ext_latin-700italic.eot");
+  src: url("./assets/fonts/montserrat-v14-latin-ext_latin-700italic.eot");
   /* IE9 Compat Modes */
-  src: local("Montserrat Bold Italic"), local("Montserrat-BoldItalic"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700italic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700italic.woff2") format("woff2"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700italic.woff") format("woff"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700italic.ttf") format("truetype"), url("/assets/fonts/montserrat-v14-latin-ext_latin-700italic.svg#Montserrat") format("svg");
+  src: local("Montserrat Bold Italic"), local("Montserrat-BoldItalic"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700italic.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700italic.woff2") format("woff2"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700italic.woff") format("woff"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700italic.ttf") format("truetype"), url("./assets/fonts/montserrat-v14-latin-ext_latin-700italic.svg#Montserrat") format("svg");
   /* Legacy iOS */
 }
 /* asap-regular - latin-ext_latin */
@@ -1558,9 +1558,9 @@ template {
   font-family: "Asap";
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/fonts/asap-v11-latin-ext_latin-regular.eot");
+  src: url("./assets/fonts/asap-v11-latin-ext_latin-regular.eot");
   /* IE9 Compat Modes */
-  src: local("Asap Regular"), local("Asap-Regular"), url("/assets/fonts/asap-v11-latin-ext_latin-regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/asap-v11-latin-ext_latin-regular.woff2") format("woff2"), url("/assets/fonts/asap-v11-latin-ext_latin-regular.woff") format("woff"), url("/assets/fonts/asap-v11-latin-ext_latin-regular.ttf") format("truetype"), url("/assets/fonts/asap-v11-latin-ext_latin-regular.svg#Asap") format("svg");
+  src: local("Asap Regular"), local("Asap-Regular"), url("./assets/fonts/asap-v11-latin-ext_latin-regular.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/asap-v11-latin-ext_latin-regular.woff2") format("woff2"), url("./assets/fonts/asap-v11-latin-ext_latin-regular.woff") format("woff"), url("./assets/fonts/asap-v11-latin-ext_latin-regular.ttf") format("truetype"), url("./assets/fonts/asap-v11-latin-ext_latin-regular.svg#Asap") format("svg");
   /* Legacy iOS */
 }
 /* asap-700 - latin-ext_latin */
@@ -1568,9 +1568,9 @@ template {
   font-family: "Asap";
   font-style: normal;
   font-weight: 700;
-  src: url("/assets/fonts/asap-v11-latin-ext_latin-700.eot");
+  src: url("./assets/fonts/asap-v11-latin-ext_latin-700.eot");
   /* IE9 Compat Modes */
-  src: local("Asap Bold"), local("Asap-Bold"), url("/assets/fonts/asap-v11-latin-ext_latin-700.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/asap-v11-latin-ext_latin-700.woff2") format("woff2"), url("/assets/fonts/asap-v11-latin-ext_latin-700.woff") format("woff"), url("/assets/fonts/asap-v11-latin-ext_latin-700.ttf") format("truetype"), url("/assets/fonts/asap-v11-latin-ext_latin-700.svg#Asap") format("svg");
+  src: local("Asap Bold"), local("Asap-Bold"), url("./assets/fonts/asap-v11-latin-ext_latin-700.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/asap-v11-latin-ext_latin-700.woff2") format("woff2"), url("./assets/fonts/asap-v11-latin-ext_latin-700.woff") format("woff"), url("./assets/fonts/asap-v11-latin-ext_latin-700.ttf") format("truetype"), url("./assets/fonts/asap-v11-latin-ext_latin-700.svg#Asap") format("svg");
   /* Legacy iOS */
 }
 /* asap-700italic - latin-ext_latin */
@@ -1578,9 +1578,9 @@ template {
   font-family: "Asap";
   font-style: italic;
   font-weight: 700;
-  src: url("/assets/fonts/asap-v11-latin-ext_latin-700italic.eot");
+  src: url("./assets/fonts/asap-v11-latin-ext_latin-700italic.eot");
   /* IE9 Compat Modes */
-  src: local("Asap Bold Italic"), local("Asap-BoldItalic"), url("/assets/fonts/asap-v11-latin-ext_latin-700italic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/asap-v11-latin-ext_latin-700italic.woff2") format("woff2"), url("/assets/fonts/asap-v11-latin-ext_latin-700italic.woff") format("woff"), url("/assets/fonts/asap-v11-latin-ext_latin-700italic.ttf") format("truetype"), url("/assets/fonts/asap-v11-latin-ext_latin-700italic.svg#Asap") format("svg");
+  src: local("Asap Bold Italic"), local("Asap-BoldItalic"), url("./assets/fonts/asap-v11-latin-ext_latin-700italic.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/asap-v11-latin-ext_latin-700italic.woff2") format("woff2"), url("./assets/fonts/asap-v11-latin-ext_latin-700italic.woff") format("woff"), url("./assets/fonts/asap-v11-latin-ext_latin-700italic.ttf") format("truetype"), url("./assets/fonts/asap-v11-latin-ext_latin-700italic.svg#Asap") format("svg");
   /* Legacy iOS */
 }
 .read-more {
@@ -2975,7 +2975,7 @@ input.inline-block, select.inline-block {
   }
 }
 .benefits-section {
-  background: url("/assets/images/flat-swish-inverted.png");
+  background: url("./assets/images/flat-swish-inverted.png");
 }
 .benefits-block {
   padding: 0 30px;
@@ -3493,13 +3493,13 @@ input.inline-block, select.inline-block {
 }
 
 .lineart-side-panel {
-  background: url(/assets/images/Mai-top-swish-inverted.png), linear-gradient(#fff 1%, #d3f0f5 1%);
+  background: url(./assets/images/Mai-top-swish-inverted.png), linear-gradient(#fff 1%, #d3f0f5 1%);
   background-repeat: repeat-x;
   background-position: 35% 0%;
 }
 @media (min-width: 768px) {
   .lineart-side-panel {
-    background: url(/assets/images/Mai-top-swish-inverted.png), url(/assets/images/lineart/leftpanel.png), url(/assets/images/lineart/rightpanel.png), linear-gradient(#fff 1%, #d3f0f5 1%);
+    background: url(./assets/images/Mai-top-swish-inverted.png), url(./assets/images/lineart/leftpanel.png), url(./assets/images/lineart/rightpanel.png), linear-gradient(#fff 1%, #d3f0f5 1%);
     background-repeat: repeat-x, no-repeat, no-repeat;
     background-position: 35% 0%, left 221px, right 221px;
   }
@@ -4115,37 +4115,37 @@ section.testimonials .container {
 }
 
 .lineart-howitworks {
-  background-image: url("/assets/images/lineart/howworksleft.png"), url("/assets/images/lineart/howworksright.png");
+  background-image: url("./assets/images/lineart/howworksleft.png"), url("./assets/images/lineart/howworksright.png");
   background-position: left, right;
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
   .lineart-howitworks {
-    background-image: url("/assets/images/lineart/howworksleft.png"), url("/assets/images/lineart/howworksright.png"), url("/assets/images/lineart/howworkstop.png");
+    background-image: url("./assets/images/lineart/howworksleft.png"), url("./assets/images/lineart/howworksright.png"), url("./assets/images/lineart/howworkstop.png");
     background-position: left, right, center top;
   }
 }
 
 .lineart-howareyoufeeling {
-  background-image: url("/assets/images/lineart/feelingleft.png"), url("/assets/images/lineart/feelingright.png");
+  background-image: url("./assets/images/lineart/feelingleft.png"), url("./assets/images/lineart/feelingright.png");
   background-position: left, right;
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
   .lineart-howareyoufeeling {
-    background-image: url("/assets/images/lineart/feelingleft.png"), url("/assets/images/lineart/feelingright.png"), url("/assets/images/lineart/feelingtop.png");
+    background-image: url("./assets/images/lineart/feelingleft.png"), url("./assets/images/lineart/feelingright.png"), url("./assets/images/lineart/feelingtop.png");
     background-position: left, right, center top;
   }
 }
 
 .lineart-connectwithus {
-  background-image: url("/assets/images/lineart/connectleft.png"), url("/assets/images/lineart/connectright.png");
+  background-image: url("./assets/images/lineart/connectleft.png"), url("./assets/images/lineart/connectright.png");
   background-position: left, right;
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
   .lineart-connectwithus {
-    background-image: url("/assets/images/lineart/connectleft.png"), url("/assets/images/lineart/connectright.png"), url("/assets/images/lineart/connecttop.png");
+    background-image: url("./assets/images/lineart/connectleft.png"), url("./assets/images/lineart/connectright.png"), url("./assets/images/lineart/connecttop.png");
     background-position: left, right, center top;
   }
 }
@@ -4324,10 +4324,10 @@ section.testimonials .container {
   background-color: #ffd54f;
 }
 .masonry-item--yellow blockquote h3:first-of-type::before {
-  content: url("/assets/images/66--yellow.svg");
+  content: url("./assets/images/66--yellow.svg");
 }
 .masonry-item--yellow blockquote h3:last-of-type::after {
-  content: url("/assets/images/99--yellow.svg");
+  content: url("./assets/images/99--yellow.svg");
 }
 .masonry-item--yellow .masonry-content h3,
 .masonry-item--yellow .masonry-content h2,
@@ -4353,10 +4353,10 @@ section.testimonials .container {
   background-color: #5ac7da;
 }
 .masonry-item--blue blockquote h3:first-of-type::before {
-  content: url("/assets/images/66--blue.svg");
+  content: url("./assets/images/66--blue.svg");
 }
 .masonry-item--blue blockquote h3:last-of-type::after {
-  content: url("/assets/images/99--blue.svg");
+  content: url("./assets/images/99--blue.svg");
 }
 .masonry-item--blue .masonry-content h3,
 .masonry-item--blue .masonry-content h2,
@@ -4382,10 +4382,10 @@ section.testimonials .container {
   background-color: #90d5ac;
 }
 .masonry-item--green blockquote h3:first-of-type::before {
-  content: url("/assets/images/66--green.svg");
+  content: url("./assets/images/66--green.svg");
 }
 .masonry-item--green blockquote h3:last-of-type::after {
-  content: url("/assets/images/99--green.svg");
+  content: url("./assets/images/99--green.svg");
 }
 .masonry-item--green .masonry-content h3,
 .masonry-item--green .masonry-content h2,
@@ -4433,10 +4433,10 @@ section.testimonials .container {
   background-color: #BEA9D2;
 }
 .masonry-item--light-purple blockquote h3:first-of-type::before {
-  content: url("/assets/images/66--light-purple.svg");
+  content: url("./assets/images/66--light-purple.svg");
 }
 .masonry-item--light-purple blockquote h3:last-of-type::after {
-  content: url("/assets/images/99--light-purple.svg");
+  content: url("./assets/images/99--light-purple.svg");
 }
 .masonry-item--light-purple .masonry-content h3,
 .masonry-item--light-purple .masonry-content h2,
@@ -5857,12 +5857,12 @@ blockquote p + p {
   margin-top: 0.8em;
 }
 blockquote p:first-of-type::before {
-  content: url("/assets/images/66.svg");
+  content: url("./assets/images/66.svg");
   margin-right: 0.5em;
   vertical-align: bottom;
 }
 blockquote p:last-of-type::after {
-  content: url("/assets/images/99.svg");
+  content: url("./assets/images/99.svg");
   margin-left: 0.5em;
   vertical-align: top;
 }
@@ -5873,12 +5873,12 @@ blockquote h3 + h3 {
   margin-top: 0.8em;
 }
 blockquote h3:first-of-type::before {
-  content: url("/assets/images/66.svg");
+  content: url("./assets/images/66.svg");
   margin-right: 0.5em;
   vertical-align: bottom;
 }
 blockquote h3:last-of-type::after {
-  content: url("/assets/images/99.svg");
+  content: url("./assets/images/99.svg");
   margin-left: 0.5em;
   vertical-align: top;
 }
@@ -6134,7 +6134,7 @@ button:active {
 }
 .btn-arrow::after {
   position: absolute;
-  content: url("/assets/images/circle-right.svg");
+  content: url("./assets/images/circle-right.svg");
   width: 30px;
   height: 30px;
   right: 4px;
@@ -6234,13 +6234,13 @@ header .container {
   display: block;
   height: 50px;
   width: 220px;
-  background: url("/assets/images/justathought.svg") no-repeat;
+  background: url("./assets/images/justathought.svg") no-repeat;
   background-size: 220px;
   background-position: center;
 }
 @media (min-width: 768px) {
   .logo a {
-    background: url("/assets/images/justathoughtlogo.svg") no-repeat;
+    background: url("./assets/images/justathoughtlogo.svg") no-repeat;
     background-position: center;
     background-size: 220px;
     height: 70px;
@@ -6343,13 +6343,13 @@ html *:focus-visible {
 }
 
 .flat-swish-divider {
-  background: url(/assets/images/flat-swish-inverted.png);
+  background: url(./assets/images/flat-swish-inverted.png);
   background-position: 60% 60%;
   min-height: 180px;
 }
 
 .mai-swish-divider {
-  background: url(/assets/images/Mai-top-swish.png);
+  background: url(./assets/images/Mai-top-swish.png);
   position: relative;
   bottom: -1px;
   background-repeat: repeat-x;
@@ -6374,7 +6374,7 @@ html *:focus-visible {
 }
 
 .flat-inverted-swish-divider {
-  background: url(/assets/images/flat-swish.png) 0 -1px;
+  background: url(./assets/images/flat-swish.png) 0 -1px;
   min-height: 215px;
   position: relative;
   background-repeat: repeat-x;
@@ -6382,39 +6382,39 @@ html *:focus-visible {
 
 .gradient-top-white-dot {
   min-height: 180px;
-  background: url("/assets/images/Mai-top-swish-inverted.png") center bottom repeat-x, url("/assets/images/white-bottom180.png") center bottom repeat-x;
+  background: url("./assets/images/Mai-top-swish-inverted.png") center bottom repeat-x, url("./assets/images/white-bottom180.png") center bottom repeat-x;
 }
 .gradient-top-white-dot.gradient-flip {
-  background-image: url("/assets/images/swish-top-white-dot-rev.png");
+  background-image: url("./assets/images/swish-top-white-dot-rev.png");
 }
 
 .gradient-top-blue-dot {
   min-height: 180px;
-  background: url("/assets/images/Mai-top-swish-inverted.png") center bottom repeat-x, url("/assets/images/white-bottom180.png") center bottom repeat-x;
+  background: url("./assets/images/Mai-top-swish-inverted.png") center bottom repeat-x, url("./assets/images/white-bottom180.png") center bottom repeat-x;
 }
 .gradient-top-blue-dot.gradient-flip {
-  background-image: url("/assets/images/swish-top-blue-dot-rev.png");
+  background-image: url("./assets/images/swish-top-blue-dot-rev.png");
 }
 
 .gradient-bottom-white-dot {
   min-height: 180px;
-  background: url("/assets/images/Mai-top-swish.png") center top repeat-x, url("/assets/images/white-top180.png") center top repeat-x;
+  background: url("./assets/images/Mai-top-swish.png") center top repeat-x, url("./assets/images/white-top180.png") center top repeat-x;
 }
 .gradient-bottom-white-dot.gradient-flip {
-  background-image: url("/assets/images/swish-bottom-white-dot-rev.png");
+  background-image: url("./assets/images/swish-bottom-white-dot-rev.png");
 }
 
 .gradient-bottom-blue-dot {
   min-height: 180px;
-  background: url("/assets/images/Mai-top-swish.png") center top repeat-x, url("/assets/images/white-top180.png") center top repeat-x;
+  background: url("./assets/images/Mai-top-swish.png") center top repeat-x, url("./assets/images/white-top180.png") center top repeat-x;
 }
 .gradient-bottom-blue-dot.gradient-flip {
-  background-image: url("/assets/images/swish-bottom-blue-dot-rev.png");
+  background-image: url("./assets/images/swish-bottom-blue-dot-rev.png");
 }
 
 .purple-bottom {
   min-height: 120px;
-  background: url("/assets/images/whiteSwish.png") center top repeat-x, url("/assets/images/whiteSwish.png") center top repeat-x;
+  background: url("./assets/images/whiteSwish.png") center top repeat-x, url("./assets/images/whiteSwish.png") center top repeat-x;
   margin-top: -100px;
   position: relative;
 }
@@ -6450,7 +6450,7 @@ html *:focus-visible {
 }
 
 .footer-swish {
-  background-image: url("/assets/images/footer.png");
+  background-image: url("./assets/images/footer.png");
   background-position-x: 35%;
   background-repeat: repeat-x, repeat-x, no-repeat;
   padding-bottom: 180px;
@@ -6458,7 +6458,7 @@ html *:focus-visible {
 
 footer {
   padding-top: 180px;
-  background-image: url(/assets/images/footer.png), linear-gradient(transparent 200px, #4e4b6d 10%);
+  background-image: url(./assets/images/footer.png), linear-gradient(transparent 200px, #4e4b6d 10%);
   background-position-x: 35%;
   background-repeat: repeat-x, no-repeat;
   margin-top: -150px;
