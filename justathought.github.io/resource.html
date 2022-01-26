@@ -21,16 +21,16 @@
       <link async href="/assets/styles/site.css?v=1617068792081" rel="stylesheet">
       <!-- <link href="/assets/styles/print.css" rel="stylesheet" media="print"> -->
       <!-- favicons -->
-      <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=5APWxmeKqg">
-      <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=5APWxmeKqg">
-      <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=5APWxmeKqg">
-      <link rel="manifest" href="/assets/favicon/site.webmanifest?v=5APWxmeKqg">
-      <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=5APWxmeKqg" color="#5ac7da">
-      <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=5APWxmeKqg">
+      <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png?v=5APWxmeKqg">
+      <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png?v=5APWxmeKqg">
+      <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png?v=5APWxmeKqg">
+      <link rel="manifest" href="./assets/favicon/site.webmanifest?v=5APWxmeKqg">
+      <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg?v=5APWxmeKqg" color="#5ac7da">
+      <link rel="shortcut icon" href="./assets/favicon/favicon.ico?v=5APWxmeKqg">
       <meta name="apple-mobile-web-app-title" content="Resource Hub | Just a Thought">
       <meta name="application-name" content="Just a Thought">
       <meta name="msapplication-TileColor" content="#5ac7da">
-      <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=5APWxmeKqg">
+      <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml?v=5APWxmeKqg">
       <meta name="theme-color" content="#ffffff">
       <title>Resource Hub | Just a Thought</title>
       <meta name="title" content="Resource Hub | Just a Thought">
@@ -102,7 +102,7 @@
          gtag('config', 'UA-137925177-7');
          }
       </script>
-            <script src = "Resource.js"></script>
+            <script src = "./assets/scripts/Resource.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
             <script src = "https://github.com/douglascrockford/JSON-js/blob/master/json2.js"></script>
       <script>
@@ -299,7 +299,6 @@
           trigger: (query) => {
              if(query.length == 0)
              {
-                //$('#autoComplete').keyup();
                 $('.card-resources').css('visibility', 'visible');
                 $('.card-resources').css('display', 'block');
              }
@@ -317,7 +316,7 @@
       <meta property="og:url" content="https://www.justathought.co.nz/Resource">
       <meta property="twitter:url" content="https://www.justathought.co.nz/Resource">
       <link rel="canonical" href="https://www.justathought.co.nz/Resource"/>
-      <link rel = "stylesheet" href = "/assets/styles/autoTwo.css">
+      <link rel = "stylesheet" href = "./assets/styles/autoTwo.css">
    </head>
    <body>
       <div class="wrapper resources" id="page_wrapper">
@@ -377,7 +376,7 @@
                    <div class = "container">
                      <div id = "header">
                      <div class = "column" id = "header__imageLeft">
-                        <img src = "uploads/ResourceImage/LeftSideResource.png">
+                        <img src = "./uploads/ResourceImage/LeftSideResource.png">
                      </div>
                      <div class = "column" id = "header__autoComplete">
                         <div id = "middleColumnContent">
@@ -389,11 +388,11 @@
                         </div>
                      </div>
                      <div class = "column" id = "header__imageRight">
-                        <img src = "uploads/ResourceImage/RightResource.png">
+                        <img src = "./uploads/ResourceImage/RightResource.png">
                      </div>
                   </div>
                </div>
-                  <img class = "header__squigglyHeader" src = "uploads/ResourceImage/resourceBelow.png">
+                  <img class = "header__squigglyHeader" src = "./uploads/ResourceImage/resourceBelow.png">
             </div>
             <div class = "container">
                 <div id = "buttonWrapper">
@@ -406,8 +405,8 @@
                <div class = "resource-grid">
                   <div class = "card-resources" data-tag = "Anxiety">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/WorryChart.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/WorryChart.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">The Worry Chart</h4>
                      <p class = "card-resources_Description">This simple "worry chart" can help you learn to let go of negative thoughts and "worries" that may</p>
@@ -415,8 +414,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Wellbeing">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/StayingOnTrack.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/audio.svg);"></button>
+                        <img src = "./uploads/ResourceImage/StayingOnTrack.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/audio.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">Staying on Track audio course</h4>
                      <p class = "card-resources_Description">Listen to the audio version of our Staying on Track quick course, to help you through times of stress and uncertainty.</p>
@@ -424,8 +423,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Wellbeing">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/ImproveYourSleep.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/ImproveYourSleep.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">10 Tips to Improve Your Sleep</h4>
                      <p class = "card-resources_Description">Sleep plays an important role in good health and wellbeing.  Learn some simple habits that really help</p>
@@ -433,8 +432,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Wellbeing">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/SeeingThingsClearly.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/SeeingThingsClearly.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">Seeing Things Clearly resource</h4>
                      <p class = "card-resources_Description">The resource will teach you how to challenge your thoughts and see things more clearly.</p>
@@ -442,8 +441,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Wellbeing">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/ProblemSolvingGuide.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/video.svg);"></button>
+                        <img src = "./uploads/ResourceImage/ProblemSolvingGuide.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/video.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">Problem Solving Guide</h4>
                      <p class = "card-resources_Description">This guide will teach you how to solve problems practically in a step-by-step process.</p>
@@ -451,8 +450,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Anxiety">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/BreathingExercise.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/BreathingExercise.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">3-Minute Breathing Exercise</h4>
                      <p class = "card-resources_Description">This video guides you through a simple 3-minute breathing exercise you can use to reduce tension and anxiety.</p>
@@ -460,8 +459,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Anxiety">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/SupportSomeone.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/SupportSomeone.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">10 Way to Support Someone</h4>
                      <p class = "card-resources_Description">It can be hard to know how to support a loved one experiencing mental distress. Here's some suggestions that may help</p>
@@ -469,8 +468,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Depression">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/WhatMattersMost.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/WhatMattersMost.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">What Matters Most</h4>
                      <p class = "card-resources_Description">this resource helps you find ways to stay connected to the things that matter most to you during this difficult time.</p>
@@ -478,8 +477,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Wellbeing">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/PositiveHunt.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/write.svg)">
+                        <img src = "./uploads/ResourceImage/PositiveHunt.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/write.svg)">
                         </button>
                      </div>
                      <h4 class = "card-resources_Title">Positive Hunt Worksheet</h4>
@@ -488,8 +487,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Wellbeing">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/AboutSelfEsteem.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/AboutSelfEsteem.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">About Self Esteem</h4>
                      <p class = "card-resources_Description">Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started</p>
@@ -497,8 +496,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Anxiety">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/ThinkingTraps.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/ThinkingTraps.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">Thinking Traps</h4>
                      <p class = "card-resources_Description">This visual guide that demonstrates the different unhelpful thinking patterns we fall in to.</p>
@@ -506,8 +505,8 @@
                   </div>
                   <div class = "card-resources" data-tag = "Wellbeing">
                      <div class = "card-resources_ImageContainer">
-                        <img src = "uploads/ResourceImage/100ThingsToDo.png"/>
-                        <button class = "small" style= "background-image: url(uploads/ResourceImage/Read.svg);"></button>
+                        <img src = "./uploads/ResourceImage/100ThingsToDo.png"/>
+                        <button class = "small" style= "background-image: url(./uploads/ResourceImage/Read.svg);"></button>
                      </div>
                      <h4 class = "card-resources_Title">100 Things To Do</h4>
                      <p class = "card-resources_Description">Taking time to do things you find enjoyable is one way to look after your mental wellbeing. Here are 100 ideas to get you started.</p>
@@ -614,7 +613,7 @@
          	}
          }
       </script>
-      <script src = "assets/scripts/Resource.js"></script>
+      <!--<script src = "assets/scripts/Resource.js"></script>-->
    </body>
 </html>
 </body>
