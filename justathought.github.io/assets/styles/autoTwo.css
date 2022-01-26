@@ -205,7 +205,7 @@
   }
   .headerContainer
   {
-    background: url(../../uploads/ResourceImage/ResourceHubHeader.png);
+    background-image: url(../../uploads/ResourceImage/ResourceHubHeader.png);
     background-repeat: no-repeat;
     max-height: 350px;
     margin-bottom: 20px;
@@ -256,11 +256,11 @@
   }
   .magnifyingGlass
   {
-    background-image: url("../../uploads/ResourceImage/magnifyingGlassCopy2.png");
+    background-image: url(../../uploads/ResourceImage/magnifyingGlassCopy2.png);
   }
   .noGlass
   {
-    background-image: url("../../uploads/ResourceImage/xButton-removebg-preview.png");
+    background-image: url(../../uploads/ResourceImage/xButton-removebg-preview.png);
     background-size: 55px;
   }
 .column
