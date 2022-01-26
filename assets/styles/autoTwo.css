@@ -205,7 +205,11 @@
   }
   .headerContainer
   {
+<<<<<<< HEAD
     background-image: url(../../uploads/ResourceImage/ResourceHubHeader.png);
+=======
+    background-image: url("/uploads/ResourceImage/ResourceHubHeader.png");
+>>>>>>> develop
     background-repeat: no-repeat;
     max-height: 350px;
     margin-bottom: 20px;
@@ -256,11 +260,19 @@
   }
   .magnifyingGlass
   {
+<<<<<<< HEAD
     background-image: url(../../uploads/ResourceImage/magnifyingGlassCopy2.png);
   }
   .noGlass
   {
     background-image: url(../../uploads/ResourceImage/xButton-removebg-preview.png);
+=======
+    background: url(/uploads/ResourceImage/magnifyingGlassCopy2.png);
+  }
+  .noGlass
+  {
+    background: url(/uploads/ResourceImage/xButton-removebg-preview.png);
+>>>>>>> develop
     background-size: 55px;
   }
 .column
@@ -482,4 +494,8 @@ makes it look quite ugly*/
     margin: 3px 0px !important;
   }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> develop
